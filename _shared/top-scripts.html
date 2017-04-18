@@ -1,0 +1,379 @@
+<script language="javascript">
+  function getCookieVal(offset) {
+    var endstr = document.cookie.indexOf(";", offset);
+    if (endstr == -1)
+      endstr = document.cookie.length;
+    return unescape(document.cookie.substring(offset, endstr));
+  }
+
+  function GetCookie(name) {
+    var arg = name + "=";
+    var alen = arg.length;
+    var clen = document.cookie.length;
+    var i = 0;
+    while (i < clen) {
+      var j = i + alen;
+      if (document.cookie.substring(i, j) == arg) {
+        var value = getCookieVal(j);
+        //alert("Getting Cookie "+name+": '"+value+"'");
+        return value;
+      }
+      i = document.cookie.indexOf(" ", i) + 1;
+      if (i == 0) break;
+    }
+    return null;
+  }
+
+  function SetCookie(name, value) {
+    var argv = SetCookie.arguments;
+    var argc = SetCookie.arguments.length;
+    var expires = (argc > 2) ? argv[2] : null;
+    var path = (argc > 3) ? argv[3] : null;
+    var domain = (argc > 4) ? argv[4] : null;
+    var secure = (argc > 5) ? argv[5] : false;
+    document.cookie = name + "=" + escape(value) +
+      ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+      ((path == null) ? "" : ("; path=" + path)) +
+      ((domain == null) ? "" : ("; domain=" + domain)) +
+      ((secure == true) ? "; secure" : "");
+    //alert("Setting Cookie "+name+" to '"+value+"'");
+    return true;
+  }
+
+  function DeleteCookie(name) {
+    var argv = DeleteCookie.arguments;
+    var argc = DeleteCookie.arguments.length;
+    var path = (argc > 1) ? argv[1] : null;
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1000); // This cookie is history
+    document.cookie = name + "=" + "; expires=" + exp.toGMTString() +
+      ((path == null) ? "" : ("; path=" + path));
+    return true;
+  }
+
+</script>
+
+<script language="javascript">
+  function func_focusfirst() {
+    document.CurrentForm.elements[0].focus();
+  }
+
+  function checkemail(str) {
+    with(str) {
+      apos = value.indexOf("@");
+      dotpos = value.lastIndexOf(".");
+      lastpos = value.length - 1;
+      commapos = value.indexOf(",");
+      if (apos < 1 || dotpos - apos < 2 || lastpos - dotpos < 2 || commapos != -1) {
+        alert("Please enter a valid email address.");
+        busyBox.Hide();
+        str.focus();
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+
+  function checkMultipleEmail(strEmails) {
+    var arrEmails = strEmails.split(",");
+    for (var i = 0; i < arrEmails.length; i++) {
+      apos = arrEmails[i].indexOf("@");
+      dotpos = arrEmails[i].lastIndexOf(".");
+      lastpos = arrEmails[i].length - 1;
+      commapos = arrEmails[i].indexOf(",");
+      if (apos < 1 || dotpos - apos < 2 || lastpos - dotpos > 4 || lastpos - dotpos < 2 || commapos != -1) {
+        alert("Please enter a valid email address.");
+        busyBox.Hide();
+        return false;
+      }
+    } // for
+    return true;
+  } // checkMultipleEmail
+
+  // REQ10461 On pressing the search button with the keyword saerch in the catalog page the results are displayed
+  // in the search results page TODO:SG
+  function goSubmitkeyword(f, iSkip, iCurrentPage) {
+    var f = document.CurrentForm;
+    f.skipCount.value = 0;
+    f.iCurrentPage.value = iCurrentPage;
+    // alert( iSkip);
+    // alert( iCurrentPage);
+    f.action = "catalog.aspx";
+    return f.submit();
+  }
+  // End of code REQ10461 TODO:SG
+
+  function goSkip(f, iSkip, iCurrentPage) {
+    f.skipCount.value = iSkip;
+    f.iCurrentPage.value = iCurrentPage;
+    return f.submit();
+  }
+
+  function openCustWin(which, winName, inputw, inputh, e, inputx, inputy, ctr) {
+    // Set defaults
+    var w = 550;
+    var h = 370;
+    var scroll = 'yes';
+    var xpos = 100;
+    var ypos = 10;
+
+    // Default: Position window at top left or screen
+    LeftPosition = 1 ? 1 : 0;
+    TopPosition = 1 ? 1 : 0;
+
+
+    // Set width and height of window
+    if (inputw != null)
+      w = inputw;
+    if (inputh != null)
+      h = inputh;
+
+    // Check for positioning
+    if (openCustWin.arguments.length >= 5) {
+
+      if (e != '') {
+        if (inputx != null)
+          xpos = inputx;
+        if (inputy != null)
+          ypos = inputy;
+        if (openCustWin.arguments.length == 8) {
+          // To Center Window
+          LeftPosition = (screen.width) ? (screen.width - w) / 2 : 0;
+          TopPosition = (screen.height) ? (screen.height - h) / 2 : 0;
+        } else {
+          LeftPosition = e.screenX - xpos;
+          TopPosition = e.screenY + ypos;
+        }
+      }
+    }
+
+    settings = 'height=' + h + ',width=' + w + ',top=' + TopPosition + ',left=' + LeftPosition + ',scrollbars=' +
+      scroll + ',resizable';
+    win = window.open(which, winName, settings);
+    if (typeof(busyBox) != 'undefined') {
+      busyBox.Hide();
+    }
+    return;
+  }
+
+  // addToCart() -for adding item to shopping_cart
+  function addRemoveCart(event_schedule_id, stAction, currency_code, cart_custom_code, autoSelectedSch, addbulkreg) {
+    var f = document.CurrentForm;
+    f.dbFunction.value = stAction;
+    f.cart_currency_code.value = currency_code;
+
+    if (stAction == "Add" && document.getElementsByName("rbPrice" + event_schedule_id).length > 0) {
+      if (getRadioValue(document.getElementsByName("rbPrice" + event_schedule_id)) == null) {
+        alert("Please select a price.");
+        //alert("Must select price for schedule before add to cart");
+        return void(0);
+      }
+    }
+
+    // if it's Epri, go to the Epri Info Form
+    if (stAction == "Add" && cart_custom_code == "1") {
+      window.name = "cust";
+      openCustWin("cust_dummy.aspx", "epri_info", 550, 400);
+      f.target = "epri_info";
+
+      f.action = "cust_epri_login_form.aspx";
+
+      setTimeout("document.CurrentForm.submit()", 400);
+      // BUG07117 Epri Attendees unable to register
+      // Note: For Epri, there're some values that need to be carried over to cart_action.aspx
+      // So, to apply bug 6907 for Epri, we have to make sure those values are passed into the query string
+      f.event_schedule_id.value = event_schedule_id;
+    } else {
+      if (typeof(autoSelectedSch) != "undefined" && autoSelectedSch != "")
+        f.action = "cart_action.aspx?original_event_schedule_id=" + f.event_schedule_id.value + "&schedules=" +
+        autoSelectedSch;
+      else
+        f.action = "cart_action.aspx?original_event_schedule_id=" + f.event_schedule_id.value;
+
+      //use query string instead of form post to pass event_schedule_id
+      //so the value would not stay with the page when doing back and pagination - bug 6907
+      f.action = f.action + "&event_schedule_id=" + event_schedule_id;
+    }
+    /*
+    	//f.event_schedule_id.value = event_schedule_id;
+    	//use query string instead of form post to pass event_schedule_id
+    	//so the value would not stay with the page when doing back and pagination - bug 6907
+    	f.action = f.action + "&event_schedule_id=" + event_schedule_id;
+    */
+    // Bundle only. selected schedules must = max_reg_per_bundle if "Must select bundle schedules at registration time" is checked.
+    if (f.max_reg_per_bundle != null && f.must_select_bundle_schedules_at_reg != null) {
+      if (f.must_select_bundle_schedules_at_reg.value == "1" && checkSchedulesSelected != null) {
+        var bOK = checkSchedulesSelected(f.max_reg_per_bundle.value);
+        if (!bOK) {
+          alert("Please complete schedule selection before proceeding");
+          busyBox.Hide();
+          return void(0);
+        }
+      }
+    }
+
+
+    if (addbulkreg == "1") {
+      window.name = "cust";
+      openCustWin("cust_dummy.aspx", "cart_action", 450, 300);
+      f.target = "cart_action";
+      f.action = "cart_action.aspx?cid=episerver&pid=1&lid=9&tstamp=1492498329282&Bulkreg=1&event_schedule_id=" +
+        event_schedule_id;
+      setTimeout("document.CurrentForm.submit()", 300);
+    } else {
+      if (f['__VIEWSTATE'] != null) {
+        f.__VIEWSTATE.value = null;
+        //f['__VIEWSTATE'] = null;
+      }
+      f.submit();
+    }
+  }
+
+  // addToCart() -for adding item to shopping_cart
+  function Launch(event_schedule_id, stAction, currency_code, autoSelectedSch) {
+    var f = document.CurrentForm;
+    f.dbFunction.value = stAction;
+    f.cart_currency_code.value = currency_code;
+
+    //use query string instead of form post to pass event_schedule_id
+    //so the value would not stay with the page when doing back and pagination - bug 6907
+    if (typeof(autoSelectedSch) != "undefined" && autoSelectedSch != "")
+      f.action = "cart_action.aspx?original_event_schedule_id=" + f.event_schedule_id.value + "&schedules=" +
+      autoSelectedSch;
+    else
+      f.action = "cart_action.aspx?original_event_schedule_id=" + f.event_schedule_id.value;
+
+    //use query string instead of form post to pass event_schedule_id
+    //so the value would not stay with the page when doing back and pagination - bug 6907
+    f.action = f.action + "&event_schedule_id=" + event_schedule_id + "&bLaunch=1";
+
+    f.submit();
+  }
+
+  // goToBundleChoose() -go to bundle choose page before adding item to shopping_cart
+  function goToBundleChoose(event_schedule_id, bundle_id, stAction, currency_code, cart_custom_code) {
+    var f = document.CurrentForm;
+    f.event_schedule_id.value = event_schedule_id;
+    f.bundle_id.value = bundle_id;
+    f.dbFunction.value = stAction;
+    f.cart_currency_code.value = currency_code;
+    f.action = "bundle_choose_schedules.aspx";
+    f.submit();
+  }
+
+  function trim(argstring) {
+    // 32 - Space (ascii)
+    // 9  - Tab (ascii)
+    var return_string = new String(argstring);
+    var begin = 0;
+    var end = return_string.length;
+    while (begin < end) {
+      var ich = return_string.charCodeAt(begin);
+      if (ich != 32 && ich != 160 && ich != 9)
+        break;
+      begin++;
+    }
+    while (end > begin) {
+      var ich = return_string.charCodeAt(end - 1);
+      if (ich != 32 && ich != 160 && ich != 9)
+        break;
+      end--;
+    }
+    return return_string.substring(begin, end);
+  }
+
+  function getRadioValue(radioObject) {
+    var value = null;
+    for (var i = 0; i < radioObject.length; i++) {
+      if (radioObject[i].checked) {
+        value = radioObject[i].value;
+      }
+    }
+    return value;
+  }
+
+  function launchOutlookCust(f, company_id, events_attended_id) {
+    f.action = "cust_outlook_action.aspx?company_id=" + company_id +
+      "&events_attended_id=" + events_attended_id;
+    f.target = "_blank";
+    busyBox.Hide();
+    f.submit();
+
+  }
+
+  function checkCartItems(stLink, stQstring, stMessage) {
+    var URL = stLink;
+    if (typeof(stQstring) != 'undefined') {
+      if (stQstring != "")
+        if (stQstring.indexOf("redir=") >= 0) {
+          stQstring = stQstring.substr(7, stQstring.length - 7)
+          URL += "&redir=" + escape(stQstring)
+        }
+      else
+        URL += stQstring;
+    }
+    if (window.confirm(stMessage))
+      window.open(URL, '_self');
+    busyBox.Hide();
+
+
+  }
+
+  function newRegistrant(strAction) {
+    //DeleteCookie('first_name', '/');
+    //DeleteCookie('last_name', '/');
+    //DeleteCookie('email', '/');
+    //DeleteCookie('regUserName', '/');
+    //DeleteCookie('regPassword', '/');
+    var f = document.CurrentForm;
+    f.newRegistration.value = 1;
+    if (strAction.indexOf("default.aspx") >= 0) {
+      window.open(strAction, '_self');
+    } else {
+      f.action = "" + strAction;
+      f.submit();
+    }
+    busyBox.Hide();
+  }
+
+  // Use this function to swap values between 2 multiselect boxes
+  function swapMultiSelect(mSelected, mSelection) {
+    mSelectedlen = mSelected.length;
+    for (i = 0; i < mSelectedlen; i++) {
+      if (mSelected.options[i].selected == true) {
+        mSelectionlen = mSelection.length;
+        mSelection.options[mSelectionlen] = new Option(mSelected.options[i].text, mSelected.options[i].value);
+      }
+    }
+    for (i = (mSelectedlen - 1); i >= 0; i--) {
+      if (mSelected.options[i].selected == true) {
+        mSelected.options[i] = null;
+      }
+    }
+  }
+
+  // Use this function to highlight selected listbox options
+  // update will not work if they are not selected.
+  function groupSelect(which) {
+    for (var i = 0; i < which.length; i++) {
+      which.options[i].selected = true;
+    }
+    return;
+  }
+
+  function eLearnOpenWindow(winURL, winName, winFeatures, closeWindoMsg) {
+    var winObj = window.open('', winName, winFeatures);
+    try {
+      if (winObj.location.href === 'about:blank') {
+        winObj.location.href = winURL;
+      } else {
+        alert(closeWindoMsg);
+      }
+    } catch (e) {
+      // check if window close???
+      alert(closeWindoMsg);
+    }
+  }
+
+</script>

@@ -1,0 +1,2493 @@
+body {
+    font-family: "Arial";
+}
+/*************************************/
+input{
+    min-width : 0px !important;
+}
+*{
+    line-height: 1.3em;
+    letter-spacing: 0px;
+   
+}
+input[type="text"], input[type="password"], textarea, select{
+    overflow: initial; 
+     margin: 0px;
+    padding: 0px 5px;
+    min-width : 0px;
+    border: 1px solid #CCC !important;
+    background-color: #FFF;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.tooltip {
+    z-index: 9 !important;
+    margin: 0;
+    padding: 0px;
+    border: 0px solid rgba(255, 255, 255, .3); 
+    background-color: #FFF;
+    color: #000;
+    font-size: 12px;
+    line-height: 1.3em;
+    opacity:1 !important;
+}
+a img {
+    display: initial;
+    border: 0;
+}
+.page-links select{
+    min-height: 1px;
+    min-width: 10px;
+}
+input, textarea, select, option {
+    color: #000;
+}
+/**************************************/
+.main-margin{
+    margin-left: 35px;
+}
+.sidenav {
+    height: 100%;
+    width: 215px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #2d2d2d;
+    overflow-x: hidden;
+}
+
+.sidenav a {
+   padding: 9px 22px 8px 22px;
+    text-decoration: none;
+  font-size: 14.7px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+.sidenav .active{
+    color: white;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+#mySidenav{
+    display: block;
+}
+.submenu{
+    display: none;
+}
+.w3-show{display:block!important}
+
+.main-heading{
+    font-size: 14.7px;
+    color: #fff;
+    font-weight: 600;
+    display:inline-block;
+    width:158px;
+    margin-top: 26px;
+}
+
+.Chevron{
+    position:relative;
+     display:inline-block;
+     height: 6px;
+
+}
+.Chevron:before,
+.Chevron:after{
+    position:absolute;
+
+    content:"";
+    border:4px solid transparent;/*adjust size*/
+}
+/*Change four 'top' values below to rotate (top/right/bottom/left)*/
+.Chevron:before{
+    top:0;
+    border-top-color:#fff;/*Chevron Color*/
+}
+.Chevron:after{
+    top:-2px;/*adjust thickness*/
+    border-top-color:#2d2d2d;/*Match background colour*/
+}
+.arrow-icon{
+
+   display: inline-block;
+}
+.logo-style {
+    height: 60px;
+    width: 250px;
+}
+.profile-title{
+    display: inline-block;
+}
+.profile-image{
+  height: 53px;
+  border-radius: 25px;
+}
+.profile{
+    float: right;
+    margin-right: 15px;
+}
+.profile-name{
+    font-size: 30px;
+    color: #525252;
+}
+.profile-designation{
+    font-size:13px;
+    font-weight: 600;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+
+}
+.menu li {
+    float: left;
+    list-style: none;
+}
+
+.menu li a {
+    display: block;
+   color: #000;
+    text-align: center;
+    padding: 15px 16px 5px;
+    text-decoration: none;
+}
+.menu li a:hover:not(.active) {
+    background-color: #fff;
+}
+.menu .active {
+    background-color: #fff;
+ }
+.tab-container{
+       height: 40px;
+    background: #f0f0f0;
+    border-top: 1px solid #cecdcd;
+}
+@media only screen and (max-width: 480px) {
+  #mySidenav{
+    display: none;
+}
+.content{
+    margin-left: 0px;
+}
+}
+.tab-box {
+   height: 230px;
+    width: 210px;
+    box-shadow: 0px 0px 3px 0px grey;
+    /* margin-right: 21px; */
+    margin-top: 20px;
+    display: inline-block;
+    float: left;
+    margin-left: 15px;
+    position:relative;
+}
+
+.certificateTextHidden {
+    /*text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;*/
+    display: inline-block;
+    width:100%;
+}
+.certificateTextHiddenOnTileView {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width:98%;
+}
+#hoverContent {
+    display:none;
+}
+.certificateTextHidden:hover #hoverContent {
+    display:block;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    width:100%;
+    background-color: inherit;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #CCC;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    font-weight: lighter;
+	max-height:500px;
+	overflow:auto;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.box-content,.box-content-info,.subscription-box-content{
+    width: 169px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 10px 0px 10px;
+    color:Black;
+}
+.box-content{
+    min-height :30px;
+    max-height :30px;
+    line-height: 1.3em;
+}
+.subscription-box-content{
+    min-height :20px;
+    max-height :30px;
+}
+.catalog-box-content{
+    text-align:left !important;    
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 10px 0px 8px;
+    color:Black;
+    z-index:11;
+}
+.box-subcontent{
+    color: grey;
+    font-size: 10px;
+    text-align: center;
+   margin-top: 3px;
+}
+.badge {
+       color: #fff;
+    background: #a9a9ab;
+    font-size: 10px;
+    padding: 3px;
+    letter-spacing: 0.6px;
+     position: absolute; 
+    margin-left: 124px;
+    float: right;
+    display: inline;
+      max-width: 183px;
+        word-wrap:normal;
+        right:7px;
+        z-index:3;
+
+}
+.icon-style{
+    text-align: center;
+    margin-top: 18px;
+    /* letter-spacing: 4.5px; */
+}
+.icon-name{
+    color: #a9a9ab;
+}
+.box-content-info{
+    background-color: #e2e2e2;
+    padding: 0px 10px 0px 10px;
+    display: none;
+    position: absolute;
+    width: 191px;
+    margin-top: 0px;
+    transition: 0.5s;
+    height: 231px;
+    top: 0;
+    margin-left: -11px;
+    z-index:1;
+}
+.catalog-box-content-info{
+    background-color: #e2e2e2;
+    padding: 0px 10px 0px 10px;
+    display: none;
+    position: absolute;
+    width: 191px;
+    margin-top: -122px;
+    transition: 0.5s;
+    height: 125px;
+    top: 0;
+    margin-left: -11px;
+}
+
+.address{
+    margin-top:10px;
+}
+/*Search*/
+#search {
+    float: right;
+    position: relative;
+    font-size: 18px;   
+    margin: 3px 62px 0 0;
+    vertical-align: bottom;
+}
+#search label {
+        position: absolute;
+    left: 17px;
+    top: 45px;
+    color: grey;
+    font-size: 14px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+#search #search-input, #search .hint {
+
+    border-radius: 23px;
+     border: 1px solid #bfbfbf;
+    padding: 5px 0px 5px 43px;
+}
+.tab-menu{
+          display: inline-block;
+    float: left;
+    margin: 10px 20px 2px 0px;
+    cursor: pointer;
+}
+.tab-menu.active{
+    color: grey;
+}
+.tab-menu-icon{
+        font-size: 20px;
+}
+.tab-title{
+     font-size: 12px;
+    display: inline-block;
+    margin-bottom: 2px;
+     text-decoration: none;
+margin-left:3px;
+}
+#menu1{
+    height: 123px;
+}
+.box-image{
+   height: 113px;
+    width: 100%;
+}
+.list-view table{
+    width: 100%;
+    margin-top: 1px;
+    cellspacing:0;
+    border :0;
+    border-collapse: collapse;
+    table-layout:fixed;
+    
+   
+}
+.list-view table td
+{
+    word-wrap:break-word;
+}
+.list-view table thead tr th{
+   padding: 20px 10px 6px 21px;
+    border-bottom: 2px solid #d7d6d6;
+    text-align: left;
+    font-weight: bold;
+    font-size : 12px;
+    white-space: nowrap; 
+}
+.list-view table tbody tr td{
+       border-bottom: 2px solid #d7d6d6;
+         padding: 10px 0px 6px 0px;
+}
+.list-view-img{
+        height: 75px;
+    width: 75px;
+    border-width: 0px;
+    margin: auto;
+}
+.list-view table thead tr th:first-child,.list-view table tbody tr td:first-child{
+padding-left: 5px;
+}
+.title-name{
+font-size: 12px;
+font-weight: bold;
+margin-bottom: 1px;
+color: #3e3d3d;
+width:100%;
+}
+.subtitle-name{
+    font-size: 10px;
+    color: grey;
+    height: 65px;
+}
+.location{
+    font-size: 12px;
+    width:100%;
+    color : #000;
+    margin-left: 12px;
+}
+.status{
+    font-size: 12px;
+   
+}
+.status-margin{
+    margin-left: 4px;
+    display: inline-block;
+    width: 100px;
+    color: #000;
+}
+
+
+.status-margin-history{
+    margin-left: 4px;
+    display: inline-block;
+    width: 100px;
+    color: #000;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.status-margin-subscription{
+    margin-left: 4px;
+    display: inline-block;
+    position: absolute;
+    width: 100px;
+    color: #000;
+}
+.reserve-color{
+     color: #12a012;
+       font-size: 17px;
+
+}
+.action-width{
+    width:187px;
+}
+.status-width{
+    width:131px;
+}
+.table-title{
+        width: 173px;
+            padding-left: 9px!important;
+}
+.line-margin{
+    margin-bottom: 5px;
+}
+.box-image-style{
+    position: absolute;
+    z-index: 0;
+}
+.box-body{
+    padding: 10px 10px 2px 10px;
+}
+.box-body-style{
+        margin-top: 112px;
+    /*position: absolute;*/
+}
+.profile-height{
+    height: 18px;
+}
+.icon-color{
+    color: #565656;
+    text-decoration:none;
+}
+.text-dec{
+        text-decoration: none;
+}
+
+.ribbon-wrapper-green {
+       width: 130px;
+    position: absolute;
+    background: #3aa8c2;
+    transform: rotate(45deg);
+    margin-top: 24px;
+    text-align: center;
+    padding: 4px;
+    color: white;
+    margin-left: 85px;
+}
+
+.certificate-box-title{
+   font-weight:bold;
+color: #101010;
+    text-align: center;
+    letter-spacing: 3.5px;
+    height: 20px;
+    margin-top: 5px;
+ margin-bottom: 2px;
+   
+    }
+.certificate-box-image{
+  height: 135px !important;
+    width: 210px !important;
+    margin-left: 2px;
+
+}
+.certi-details,.certi-date{
+
+   text-align: center;
+}
+.certi-details{
+    font-size: 12px;
+    font-weight:bold;
+    margin-top: 10px;
+
+}
+.certi-date{
+  font-size: 11px;
+}
+
+
+.certi-body{
+    padding: 10px;
+}
+
+.box-info-location{
+    margin-top: 6px;
+    font-size: 11px;
+}
+
+
+.box-info-date{
+        margin-top: 7px;
+    font-size: 11px;
+}
+.box-info-name{
+    margin-top: 5px;
+}
+
+
+.dxdvItem{
+    border: 0px solid #A8A8A8 !important;
+    background:none!important ;
+    padding: 12px 12px 12px 14px;
+    height: 180px
+}
+
+
+.dxdvFlowItem {
+     background:none!important ;
+}
+
+
+
+.table-row tr td{
+ border-bottom: 2px solid #d7d6d6;
+}
+
+
+.box-hide:hover .box-content-info{
+    display: block;
+}
+
+
+
+
+.badgebackcolor {
+    background-color: blue;
+}
+
+.DataViewItemTop { margin-bottom: 16px; }
+.DataViewItemTop a { font-size: 10px; color: #666666; text-decoration: underline; }
+.DataViewItemTitle { font-size: 13px; margin: 6px 0px; }
+.DataViewItemTitle a { color: blue; text-decoration: underline; }
+.DataViewItemPrice { color: #3e3d3d; font-size: 14px; font-weight: bold; }
+
+
+ .border_bottom_Active{
+    border-bottom :5px solid black;
+}
+.page-links {
+padding:15px;
+}
+.modalloading {
+position: fixed;
+z-index: 999;
+height: 100%;
+width: 100%;
+top: 0;
+background-color: transparent;
+filter: alpha(opacity=40);
+opacity: 0.6;
+-moz-opacity: 0.8;
+}
+.modalcenter{
+
+    z-index: 1000;
+    margin: 300px auto;
+    padding: 10px;
+    width: 130px;
+    background-color: transparent;
+    border-radius: 10px;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -moz-opacity: 1;
+}
+.modalcenter img {
+    height: 50px;
+    width: 50px;
+}
+
+input[id ^= 'profileRegistrationListView_']{
+    position: absolute;
+    padding-left: 0px;
+    margin-left: 4px;
+    
+}
+input[id ^= 'profileSubscriptionListview_'] {
+    position: absolute;
+    padding-left: 0px;
+    margin-left: 4px;
+}
+input[id ^= 'lvCourseReviews_']{
+    position: absolute;
+    padding-left: 0px;
+    margin-left: 4px;
+}
+
+
+baody{
+    margin:0;
+}
+
+#myprofileMain input:not([type="checkbox"]){
+    border: 1px solid #CCC;
+    padding: 6px 12px;
+    border-radius: 2px;
+    display: block;
+    margin: 0 0 10px 0;
+    box-sizing : border-box;
+    width :100%;
+    
+}
+#myprofileMain input[name="zip"]{
+    width:54%;
+}
+#myprofileMain form{
+    float : left;
+    margin: 0 15px 15px 0;
+}
+.myprofile_personal_information img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 25px;
+}
+#myprofileMain select{
+    float : left;
+    margin: 0 0px 10px 0;
+    border : 1px solid #CCC;
+    padding: 5px;
+
+    width:100%;
+}
+hr{
+    width:100%;
+    float:left;
+
+}
+#myprofileMain{
+    width:96%;
+    /*position:absolute;*/
+    margin: 1% 1%;
+    display: inline-block;
+}
+.myprofile_personal_information{
+    width: 20%;
+    float: left;
+    margin-top: 5%
+}
+.myprofile_contact_billing_information{
+       width:77%;
+    float: left;
+    margin: 0px 0px 30px 30px;
+}
+#contactInformationForm{
+    width: 45%;
+    float:left;
+    padding-right:15px;
+}
+#billingInformationForm{
+    width: 45%;
+    float:left;
+}
+#myprofile_contact_billing_information{
+    display: inline-block;
+}
+form[name="myprofile_contact_billing_information"]{
+    width:100%;
+}
+form[name="profileInformation"]{
+    width:100%;
+}
+.submitButton{
+    background-color: black;
+    color:white;
+    padding: 5px;
+}
+#contactInformationForm > h5{
+        margin: 0px 0px 3%;
+}
+#billingInformationForm > h5{
+   margin: 0px 0px 8% 0px;
+}
+#billingInformationForm > input[type="checkbox"]{
+    margin-bottom : 10px;
+
+}
+#myprofileMain > input[type="checkbox"]{
+    margin-bottom : 15px;
+
+
+}
+
+#myprofile_personal_information button{
+        width: 65%;
+        margin: 0 6px 20px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 5px;
+        background-color: #FFF;
+
+
+
+}
+#myprofile_personal_information input:not([type="checkbox"]) {
+    width:80%;
+
+
+
+}
+#myprofile_personal_information{
+    width: 80%;
+    padding: 20px;
+    background-color: #CCC;
+
+
+}
+#submit_part input[type="checkbox"]{
+    margin-bottom:15px;
+
+
+
+
+
+}
+#buildingInfoAsContactInfo{
+    font-weight: normal;
+
+
+}
+.userInformation{
+    float: left;
+    margin-left: 3%;
+
+
+}
+.infoForUser{
+    margin-left: 3%;
+ 
+}
+
+.infoForUser table td{
+    font-size: 12px;
+}
+.userInformation td{
+    font-size: 12px;
+}
+
+.infoForUser-div{
+   width:98%;
+    border-top:2px solid #ccc !important;
+
+}
+
+#sameAsContactInfo{
+    font-weight: normal;
+    font-size: small;
+
+
+}
+
+
+
+.table-row tr td{
+ border-bottom: 2px solid #d7d6d6;
+}
+.box-hide:hover .box-content-info,.catalog-box-content-info{
+    display: block;
+}
+.badgebackcolor {
+    background-color: blue;
+}
+
+#BlurPendingBox{
+    width: 100%;
+    height: auto;
+    background-color: #CCC;
+    z-index: 100;
+}
+.pendingBox {
+  position: relative;
+  z-index: 12;
+}
+.pendingRibbon {
+  position: absolute;
+  right: 2px;
+  top: 0px;
+  z-index: 1;
+  overflow: hidden;
+  width: 85px;
+  height: 85px;
+  text-align: right;
+}
+.pendingRibbon span {
+  font-size: 11px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 2em;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  width: 150px;
+  display: block;
+  background: #3aa8c2;
+  position: absolute;
+  top: 25px;
+  right: -40px;
+  letter-spacing:2.3px;
+}
+.pendingRibbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+}
+.blurContentDiv,
+.actualContentDiv {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+.blurContentDiv {
+  z-index: 10;
+  background-color: rgba(255,255,255,0.80);
+}
+.hideText
+{
+    display:none;
+}
+.list-view table tbody:last-child tr td {
+    border-bottom: 0px;
+}
+
+/* Certification Css */
+
+
+.certificationMainTable{
+    width : 100%;
+    margin-top: 1%;
+    border-collapse: collapse;
+}
+.certificationMainTable th{
+    text-transform: uppercase;
+    border-bottom: 1px solid #CCC;
+    text-align: left;
+    padding: 1%;
+    border-top:0px;
+}
+.certificationMainTable td{
+ border-bottom: 1px solid #CCC;
+   padding: 1%;
+  
+}
+.certificationMainTable td > .fa{
+    margin-left: 10%;
+    color : #CCC;
+    margin-right: 2%;
+
+}
+.certDate
+{
+     font-size:12px;
+ }
+.certificationMainTable td > .active{
+    color : rgba(42, 243, 8, 0.98);
+
+}
+.certificationMainTable td > .pending{
+    color : yellow;
+}
+ .noUnderline{
+    color : #3e3d3d;
+    text-decoration: none;
+
+}
+.certificationMainTable .certificationName{
+   font-weight: normal;
+   font-size: 12px;
+}
+
+.certificationMainTable tbody:last-child tr td {
+    border-bottom: 0px;
+}
+.certificationMainTable a{
+    font-size: 12px;
+}
+
+/* Certification Detail Page */
+
+.certificateDetailMain{
+    width:100%;
+    font-size:12px;
+}
+.certificateDetailImage{
+    width : 20%;
+    float: left;
+}
+.certificateDetailContent{
+    width:80%;
+    float:left;
+    margin-bottom: 5%;
+}
+.certificateDetailImage img{
+    padding : 5%;
+}
+
+.certificateDetailContent h5,h3,p{
+    margin : 0px;
+}
+.certificateDetailContent #content{
+    padding : 1% 0% 1% 0%;
+}
+.certificateDetailContent span{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.certificateDetailContent #data{
+    font-weight:normal;
+    
+}
+.certificateDetailMainTable{
+    width : 100%;
+    margin-top: 0%;
+    border-collapse: collapse;
+    font-size:12px;
+}
+.certificateDetailMainTable th{
+    text-transform: uppercase;
+    text-align: left;
+    background-color: #f0f0f0;
+    padding: 1%;
+}
+.certificateDetailMainTable td{
+   border-bottom: 1px solid #CCC;
+   padding: 1%;
+}
+
+   .decertified-text{
+    font-family:Arial !important;
+}
+
+.certificateDetailMainTable td > .fa{
+    margin-left: 10%;
+    color : #CCC;
+}
+.certificateDetailMainTable td > i.active{
+    color : rgba(42, 243, 8, 0.98);
+}
+
+.certificateDetailContent h3
+{
+    margin : 0px;
+}
+.certificateDetailMainTable tbody:last-child td
+{
+    border-bottom : 0px;
+}
+.certificateDetailMainTable .highWidth{
+    width:25%;
+}
+.certificateDetailMainTable .mediamWidth{
+    width:15%;
+}
+.certificateDetailMainTable .endWidth{
+    width : 35%;
+}
+.certificateDetailMainTable tbody tr td:last-child > .fa{
+    margin-left : 5%;
+}
+.BACEContainer{
+    width:95%;
+    margin-left: 2%;
+}
+.BACEContainer > h2,h3{
+    margin-top: 2%;
+    margin-bottom: 0px;
+}
+.BACEContainer  p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.BACEContainer hr{
+    width:90%;
+    float: left;
+}
+.BACEContainer .attendeesListTable{
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    width: 80%;
+    table-layout:fixed;
+}
+.BACEContainer .attendeesListTable td{
+    border-bottom: 1px solid #CCC;
+    width: 21%;
+    word-wrap:break-word;
+}
+.BACEContainer .attendeesListTable td:nth-child(2)
+{
+    text-align:center;
+}
+.BACEContainer .attendeesListTable tr:last-child td{
+    /*border-bottom: 0px;*/
+}
+.BACEContainer .attendeesListTable tr td:last-child{
+    text-align: center;
+}
+.BACEContainer .attendeesInfo{
+    background-color: #e6e6e6;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1%;
+}
+.BACEContainer .attendeesInfo  input{
+    padding: 6px 12px;
+    width: 28%;
+    margin: 5px;
+}
+.BACEContainer .attendeesInfo td{
+    width: 100%;
+}
+.BACEContainer .attendeesInfo  select{
+    width: 28%;
+    padding: 6px 12px;
+    border: 1px solid #CCC;
+    margin: 5px;
+}
+/*.BACEContainer .attendeesInfo > input:first-child{
+    margin: 1%;
+}*/
+.BACEContainer .attendeesInfo  span{
+    display: inline-block;
+    padding: 15px;
+    font-size: xx-large;
+    background-color: #CCC;
+}
+.BACEContainer .buttonArea{
+    margin-top:3%;
+}
+.BACEContainer .buttonArea > button{
+    padding : 5px 15px;
+    margin-right: 5px;
+    border-radius: 5px;
+    width: 15%;
+}
+.BACEContainer .buttonArea > button#back{
+    background-color: #FFF;
+
+}
+.BACEContainer .buttonArea > button#quickStart{
+    background-color: #000;
+    color : #FFF;
+    border : 1px solid #000;
+}
+.BACEContainer .attendeesInfo .labelClass{
+    display: inline-block;
+    width: 5%;
+  min-width: 15px;
+}
+.BACEContainer .attendeesInfo .labelClass input{
+    height: 10%;
+    width: 10%;
+}
+.BACEContainer .attendeesInfo .labelClass label{
+    display: inline-block;
+}
+.totalPercentageBar {
+    width: 100%;
+    height: 8px;
+    background: #CCC;
+    position: relative;
+}
+#percentageBar {
+    height: 8px;
+    background: black;
+}
+.reviewpercentageBar {
+    height: 18px;
+    background: #DEA332;
+}
+.verticalLine{
+        border-left: 1px solid black;
+        /*margin-left: 70%;*/
+        height: 7px;
+}
+.percentageOfComplete {
+    /*margin-left: 67%;*/
+    margin-bottom: 0px;
+    text-transform: uppercase;
+     white-space: nowrap;
+        font-size: 8px;
+    font-weight: bold;
+    margin-top: -22px;
+    color:Black;
+   }
+.viewBottomHighlight
+{
+    border-bottom:2px solid #000;
+}
+.listViewTiltleNames
+{
+  float: left;
+  /* height: 100px; */
+  width: 40%;
+  padding-left: 10px
+}
+
+.listViewHistoryTiltleNames
+{
+  float: left;
+  height: 100px;
+  width: 98%;
+  padding-left: 10px
+}
+
+.customProgressbar
+{
+    /*margin-top:100px;*/
+    width: 80%;
+	margin-top:-50px;
+}
+.tileViewCustomProgressbar{
+    width: 100%;
+    margin-top: 7%;
+}
+.subscriptionTileViewCustomProgressbar{
+    width: 100%; 
+}
+.listViewImageFlaoting
+{
+    float:left;
+    height:100px;
+    width:190px;
+}
+
+.tileViewImageFlaoting
+{
+    float:left;
+    height:100px;
+    width:190px;	
+}
+.list-view table tbody tr td.registrationListViewTD
+{
+    padding-right : 5px;
+}
+.registrationListViewClear
+{
+    clear:both;
+}
+.displayNoneClass
+{
+    display:none;
+}
+
+.whitespaceNowrapClass
+{
+    white-space:nowrap;
+}
+.popupInfoForUser{
+  overflow: auto !important;
+  width: 85% !important;
+  margin:0px !important;
+}
+.popupUserInformation{
+  float:left !important;
+  margin : 0 !important;
+}
+.popupMyprofile_contact_billing_information{
+  margin : 0px;
+}
+.popupMyprofileMain{
+  margin : 1% 0px !important;
+}
+
+
+.userDiv{
+  width:50%;
+  border:2px solid #f0f0f0;
+  float: left;
+}
+.userDiv caption{
+  background-color: #CCC;
+  margin: 0px;
+  padding: 2px;
+  text-align: center;
+}
+.moduleSummary caption{
+  background-color: #CCC;
+  margin: 0px;
+  padding: 2px;
+  text-align: center;
+}
+.interactions caption{
+  background-color: #CCC;
+  margin: 0px;
+  padding: 2px;
+  text-align: center;
+}
+.objactives caption{
+  background-color: #CCC;
+  margin: 0px;
+  padding: 2px;
+  text-align: center;
+}
+.userDiv table{
+  width : 100%;
+}
+.userDiv table tr{
+  border : 1px solid #F0F0F0;
+    padding: 5px;
+}
+
+.userDetailsDiv{
+  width:45%;
+  float : left;
+   margin-right: 15px;
+    position: relative;
+    z-index:1;
+}
+.moduleSummary table{
+  width: 100%;
+}
+.moduleSummary table th{
+  border : 1px solid #101010;
+  padding: 5px;
+}
+.moduleSummary{
+  border: 1px solid #F0F0F0;
+  margin: 5%;
+}
+.interactions table{
+  width: 100%;
+}
+.interactions table th{
+  border : 1px solid #101010;
+      padding: 5px;;
+}
+.interactions{
+  border: 1px solid #F0F0F0;
+  margin: 5%;
+}
+.objactives table{
+  width: 100%;
+}
+.objactives table th{
+  border : 1px solid #101010;
+    padding: 5px;
+}
+.objactives{
+  border: 1px solid #F0F0F0;
+  margin: 5%;
+}
+.userDiv #GolfBasics tr td:not(:first-child){
+    text-align:center;
+}
+.userDiv .detailsButton{
+    background-color: #000;
+    color: #FFF;
+    border: 1px solid #000;
+    padding: 2% 5%;
+    border-radius: 5px;
+}
+
+.userDetailsDiv  #GolfSummary{
+    margin-bottom: 5%;
+}
+
+/* For evaluation*/
+.evaluationContainer{
+    width:90%;
+    margin-left: 2%;
+}
+.evaluationContainer hr{
+    width:90%;
+    float: left;
+}
+.evaluationContainer table {
+    border-collapse: collapse;
+    width: 90%;
+}
+.evaluationContainer table td:not(:nth-child(2)) {
+    width : 10%;
+}
+.evaluationContainer table tr {
+    border: solid thin;
+}
+.evaluationContainer table td {
+    padding: 10px;
+    /*border-left: 1px solid #000;*/
+}
+.evaluationContainer table th {
+ padding: 10px;
+ border-left: 1px solid #000;
+}
+
+.evaluationContainer input[type="radio"]{
+    width:100%;
+    height: 20px;
+}
+
+.evaluationContainer table .noHeading{
+    visibility: hidden;
+}
+.evaluationContainer table tbody tr:first-child td:nth-child(2){
+    visibility: hidden;
+    border-top: 1px solid white;
+}
+.evaluationContainer table tbody tr:first-child td:first-child{
+    visibility: hidden;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+}
+.evaluationContainer table tbody tr td:first-child{
+    width: 110px;
+}
+.evaluationContainer select{
+    margin-bottom: 15px;
+    width: 30%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 3%;
+    display: flex;
+}
+.evaluationContainer #keywordLabel{
+    display: inline-block;
+    margin: 2% 0 1% 3%;
+    color: #CCC;
+}
+.evaluationContainer .submit {
+    width : 100%;
+    display:inline-block;
+    margin: 3% 0 0 3%;
+}
+.evaluationContainer #submit{
+    background-color: #000;
+    color: #FFF;
+    border-color: #000;
+    width: 10%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 2%;
+}
+.pending-color{
+     color: Orange;
+       font-size: 17px;
+
+}
+
+/*Course seurvey(Questions) */
+
+.surveyFormContainer input[type="text"]{
+    padding: 3px 5px;
+    margin-top: 5px;
+    /* border-radius: 2px; */
+    width: 20%;
+}
+.surveyFormContainer select{
+    margin-top: 5px;
+padding: 3px 5px;
+width: 20%;
+}
+.surveyFormContainer textarea{
+    margin-top: 5px;
+    padding: 3px 5px;
+}
+
+surveyFormContainer{
+    width : 90%;
+    margin-left: 2%
+    /*position:absolute;*/
+}
+.surveyFormContainer > h2{
+    margin-top: 2%;
+    margin-bottom: 0px;
+}
+.surveyFormContainer > p{
+    margin-top: 0px;
+}
+.surveyFormContainer hr{
+    width:90%;
+    float: left;
+}
+.surveyFormContainer label{
+    display: block;
+}
+.surveyFormContainer .surveyFormPart{
+    width : 50%;
+    float : left;
+}
+.surveyFormContainer .surveyFormPart input[type="radio"]{
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+}
+.surveyFormContainer .surveyFormPart > select{
+    margin-bottom: 15px;
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+}
+.surveyFormContainer .surveyFormPart > input{
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+.surveyFormContainer .surveyFormPart > textarea{
+    height: 200px;
+    width : 80%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.surveyFormContainer .surveyFormPart h4{
+    margin-bottom: 0px;
+}
+.surveyFormContainer .submit {
+    width : 100%;
+    display:inline-block;
+    margin-top: 3%;
+}
+.surveyFormContainer #submit{
+    background-color: #000;
+    color: #FFF;
+    border-color: #000;
+    width: 10%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 2%;
+}
+
+/*------------------------------*/
+
+.surveyFormContainer .roundedCheckbox {
+    position: relative;
+}
+.surveyFormContainer .roundedCheckbox label {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+    transition: all .5s ease;
+    position: absolute;
+    top: 3px;
+    background: #FFF;
+    border: 1px solid #000;
+    left : 5px;
+}
+
+.surveyFormContainer .roundedCheckbox input[type=checkbox]:checked + label {
+    background: #000;
+}
+.surveyFormContainer .roundedCheckbox input[type=checkbox] {
+visibility: hidden;
+}
+
+
+#pnlSubscriptionTileviewData{
+    border-top:1px solid #ccc;
+    margin-top: 10px;
+}
+.ascDscImgStyle{
+    margin-bottom:-5px;
+}
+/* subscription CSS    */
+
+.subscriptionPackage{
+    width : 100%;
+}
+
+.subscriptionPackage .textContainer .pContent{
+    margin-top: 3px;
+    font-size: 0.8em;
+    height: auto;
+    overflow-y: scroll;
+    overflow: auto;
+}
+.subscriptionPackage .textContainer{
+    width : 80%;
+    float: left;
+}
+.subscriptionPackage .textContainer .subscriptionDesc{
+    margin : 0px;
+}
+.subscriptionPackage .textContainer h2{
+    margin : 0px;
+    font-size: inherit;
+}
+.subscriptionPackage .textContainer h5{
+    margin-bottom : 0px;
+    font-size: inherit;
+}
+.subscriptionDetails{
+    width: 90%;
+    float: left;
+}
+.subscriptionDetails table{
+    width:100%;
+    border-collapse: collapse;
+}
+.subscriptionDetails table tr{
+    width:100%;
+    text-align: left;
+    border-bottom: 1px solid #F0F0F0;
+}
+.subscriptionDetails table th{
+    background : #F0F0F0;
+    text-align: left;
+    padding: 5px;
+    text-transform: uppercase;
+    width: 60%;
+}
+.subscriptionDetails table td{
+    text-align: left;
+    padding: 15px;
+}
+.subscriptionDetails table td .packCourceDetails{
+    float: left;
+    margin-left: 5px;
+    margin-top: 3%;
+}
+.subscriptionDetails table td img{
+    float: left;
+    min-height: 100px;
+    max-height: 150px;
+    min-width: 100px;
+    max-width: 150px;
+}
+.subscriptionDetails .headings span{
+    margin-right: 15px;
+}
+.subscriptionDetails .headings span:first-child{
+    border-bottom: 2px solid black;
+}
+.active{
+    color : green;
+}
+
+subscriptionPackage{
+    width : 100%;
+}
+.subscriptionPackage .imageContainer { 
+    min-width: 180px;
+    max-width: 22%;
+    min-height: 150px;
+    max-height: 150px;
+    float: left;
+}
+.subscriptionPackage .textContainer{
+    width: 77%;
+    float: left;
+    padding: 0 5px;
+}
+.subscriptionPackage .textContainer .subscriptionDesc{
+    margin : 0px;
+}
+.subscriptionPackage .textContainer h3{
+    margin : 0px;
+    font: small;
+}
+.subscriptionDetails{
+    width: 100%;
+    float: left;
+}
+.subscriptionDetails table{
+    width:100%;
+    border-collapse: collapse;
+}
+.subscriptionDetails table tr{
+    width:100%;
+    text-align: left;
+    border-bottom: 1px solid #F0F0F0;
+}
+.subscriptionDetails table th{
+    background : #F0F0F0;
+    text-align: left;
+    padding: 5px;
+    text-transform: uppercase;
+    width: 60%;
+}
+.subscriptionDetails table td{
+    text-align: left;
+    padding: 15px;
+}
+.subscriptionDetails table td .packCourceDetails{
+    float: left;
+    margin-left: 5px;
+    margin-top: 3%;
+}
+.subscriptionDetails table td img{
+    float: left;
+    min-height: 100px;
+    max-height: 150px;
+    min-width: 100px;
+    max-width: 150px;
+}
+.subscriptionDetails .headings span{
+    margin-right: 15px;
+}
+.subscriptionDetails .headings span:first-child{
+    border-bottom: 2px solid black;
+}
+.active{
+    color : green;
+}
+.subscriptionSearchResultsTable{
+    width: 100%;
+}
+
+.subscriptionSearchResultsTable table{
+    width : 100%;
+    border-collapse: collapse;
+}
+
+.subscriptionSearchResultsTable table td{
+    text-align: center;
+    padding: 10px;
+}
+.subscriptionearchButtonsReset{
+    padding: 5px 30px;
+    background-color: #FFF;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;   
+  
+}
+.subscriptionearchButtonsGo{
+    padding: 5px 35px;
+    background-color: #000;
+    color:#FFF !important; 
+    border: 1px solid #000;
+    border-radius: 5px;
+   
+}
+.subscriptionearchButtonsGo:hover{
+    color : #FFF !important;
+}
+
+.subscriptionSearchResultsTable table tr{
+    border-bottom: 2px solid #d7d6d6; 
+}
+
+
+
+ .subscriptionPageRegistrationView{
+    width: 98%;
+    table-layout: fixed;
+    padding: 2% 0px;
+    border-top:2px solid #ccc;
+     white-space: nowrap;
+}
+.subscriptionDetailnavView{
+    margin-top: 1%;
+    font-size: 15px;
+    margin-left : 5px;
+}
+.SubscriptionPNGiconsContainer > img{
+    width: 12px;
+    height: 12px;
+    
+}
+.subscriptionUnsubscribeContent{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.subscriptionInputContainer{
+    margin-left:4%;
+}
+/*   More Information      */
+
+
+
+.moreInformation{
+    width : 90%;
+}
+.moreInformation .imageContainer { 
+    min-height: 150px;
+    max-height: 150px;    
+    display:block;
+}
+.moreInformation .textContainer{
+    width : 75%;
+    margin-left:150px;
+}
+.moreInformation .textContainer .subscriptionDesc{
+    margin : 0px;
+}
+.moreInformation .textContainer h3{
+    margin : 0px;
+}
+
+
+.catalogInformation{
+    width : 100%;
+	clear: both;
+
+}
+.catalogInformation .imageContainer { 
+    /*min-height: 150px; 
+    float: left;
+    width: 12%;
+    position: absolute;*/
+	    /* min-height: auto; */
+    /* max-height: 100%; */
+    /* display: inline-block; */
+    float: left;
+    width: 12%;
+    /* position: absolute; */
+}
+.catalogInformation .textContainer{
+        /*width: 88%;
+    margin-left: 204px;
+    float: left;*/
+	    width: 84%;
+    margin-left: 202px;
+}
+.catalogInformation .textContainer .subscriptionDesc{
+    margin : 0px;
+}
+.catalogInformation .textContainer h3{
+     margin: 0px;
+   
+}
+
+
+
+/* Icons */
+
+
+.PNGiconsContainer{
+    display:inline-block;
+    white-space: normal;
+}
+.PNGiconsContainer > img{
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.HistoryPNGiconsContainer{
+    display:inline-block;
+    white-space: normal;
+    width: 100px;
+}
+.HistoryPNGiconsContainer > img{
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.PNGiconStatus{
+   white-space: nowrap;
+
+
+
+}
+.PNGiconStatus > img{
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.PNGiconStatus img:not([src]){ display : none}
+
+
+.PNGiconStatusActions{
+     display:inline-block;
+     white-space: nowrap;
+}
+.PNGiconStatusActions > img{
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+
+
+
+.sortingIcons
+{
+    height:16px;
+    width:16px;
+    margin-left: 5px;
+}
+.main-tabview-display
+{
+     vertical-align: bottom;
+    margin-left: 0px;
+}
+
+.certification-detail-Prop img
+{
+   width:18px;height:18px;margin-left: 12%;
+   }
+   
+  .certification-detail-PropIconLast img
+ {
+   width:18px;height:18px;margin-left: 3%;
+ }
+ 
+ .tile-view-icon-status 
+ {
+     width:18px;
+     height:18px;
+     float:left;
+ }
+ .headerColor
+ {
+    color:#3e3d3d !important;
+    text-decoration:none;
+ }
+  .certification-header
+ {
+         text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    color: #3e3d3d !important
+ }
+.certification-icon
+ {
+     position: absolute;
+    padding-left: 0px;
+    margin-left: 4px;
+ }
+ 
+ .moreInformation table td{
+    font-size:12px;
+ }
+ a{
+    text-decoration: none !important;
+ }
+
+ .organizationTable{
+    width: 98%;
+    border-top:2px solid #ccc !important;
+   margin-top:0px !important;
+  }
+
+.organizationTable td
+{
+     background-color:White !important;
+}
+.organizationTable td input{
+    width: 90%;
+    padding:4px 6px;
+}
+.organizationTable td select{
+    width: 90%;
+    padding:4px 6px;
+}
+
+.organizationTable .label-width {
+    width: 25%;
+    padding:4px 0px;
+    display:inline-block;
+}
+
+.mysubscription-registration td
+{
+    padding:10px 10px 6px 0px !important;
+}
+
+
+.longTextHeading{
+    text-align: center !important;
+}
+
+
+.subscriptionDetailPageTitleImg{
+    height: 100px;
+    width: 190px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.subscriptionPackcourseImg{
+    height: 100px;
+    width: 190px;
+    border-width: 0px;
+    float: left;
+    min-width: 80px;
+}
+
+.mySubscriptionsChildTabs{
+    font-size: medium !important;
+    color:#3e3d3d !important;
+    text-decoration: none;
+    font-weight:bold;
+    margin-top:10px;
+}
+.subscription-detail-preview tr,
+.subscription-detail-preview th,
+.subscription-detail-preview td{
+	width:100%;
+}
+
+.pastRegistrationListViewTiltleNames {
+    float: left;
+    height: 100px;
+    width: 50%;
+    padding-left: 10px;
+}
+
+.pastRegistrationText{
+    font-weight: bold;
+}
+/***************************************************/
+h3:after {
+    position: initial;
+    top: 17px;
+    margin-left: 10px;
+    width: 99%;
+    height: 5px;
+    border-top: 0px solid #ededed;
+    border-bottom: 0px solid #ededed;
+    content: '';
+}
+h1, h2, h3, h4, h5{
+    margin: 0px;
+    padding: 0px;
+}
+#imgsearch{
+    height: 25px;
+    width: 30px;
+    border-width: 0px;
+    vertical-align: middle;
+}
+.menu{
+    margin-left: 0px;
+}
+.status-margin input[name="request"]{
+    color:blue;
+}
+.status-margin span[id $="_lblsubspackregister"]{
+    color:blue;
+    
+}
+
+.location font{
+    font-size: small !important;
+}
+.location span[id $= "_lblListEnteredDate"]{
+    font-size: small !important;
+}
+.box-info-date font{
+    font-size: small !important;
+}
+.box-info-date span[id $="_lblHoverEventDate"]{
+    font-size: small !important;
+}
+.box-content-info span[id $="_lblTileViewbundleschedules"] font{
+    font-size: small !important;
+}
+.box-content-info font{
+    font-size: small !important;
+}
+
+/*******Swathi Changes ********/
+.mysubscription-registration tbody tr td:nth-child(6) img {
+    text-align: center;
+    float: none;
+}
+.mysubscription-registration tbody tr td:nth-child(6) { 
+ text-align:center
+}
+.statusInnerTable{
+    width: 100% !important;
+}
+.statusInnerTable td{
+    padding : 0px !important; 
+}
+.statusInnerTable td:first-child{
+    width: 35% !important;
+}
+.statusInnerTable tr{
+    padding : 0px !important;
+}
+input:hover{
+    color : #000 !important;
+}
+.tableFixedLayout{
+    table-layout: fixed;
+}
+.textAlignCenter
+{
+    text-align:center;
+}
+.status-margin span[id $="_lblCourseRegistermessage"] {
+    color: blue;
+}
+#certificationListView_lvdataPager a {
+    font-size: 16px;
+}
+.imageCenterClass {
+    margin-left: 35px;
+}
+
+#content {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    padding: 20px 0;
+    width: 100%;
+}
+
+input[name="unsubscribe"]{
+    margin-top: -5px;
+}
+
+@media only screen and (max-width: 1200px){
+body > form#frmModernProfile[name="frmModernProfile"]{
+    width: 830px;
+}
+}
+
+/*******rating and review ********/
+.star
+{
+	background-image: url(../../images/cust/staroutlineyellow32.png);
+	height: 32px;
+	width: 32px;
+}
+.waitingstar
+{
+	background-image: url(../../images/cust/staroutlineyellow32.png);
+	height: 16px;
+	width: 16px;
+}
+.halffilledstar
+{
+	background-image: url(../../images/cust/halfstar32.png);
+	height: 32px;
+	width: 32px;
+}
+.filledstar
+{
+	background-image: url(../../images/cust/starfullyellow32.png);
+	height: 32px;
+	width: 32px;
+}
+.reviewstar
+{
+	background-image: url(../../images/cust/staroutlineyellow16.png); 
+	height: 16px;
+	width: 16px;
+}
+.reviewhalffilledstar
+{
+	background-image: url(../../images/cust/halfstar16.png);
+	height: 16px;
+	width: 16px;
+}
+.reviewfilledstar
+{
+	background-image: url(../../images/cust/starfullyellow16.png);
+	height: 16px;
+	width: 16px;
+}
+
+  .body
+  {
+	    background-color:#ECF5FB;
+	    background-image:url(../../images/Stage_BG_btm.png);
+	    background-position:center bottom;
+	    background-repeat:repeat-x;
+	    font-family:Tahoma,Verdana,Segoe,sans-serif;
+	    font-size:70%;
+	    padding-bottom:20px;
+}
+
+.Container
+{
+	margin:auto;
+	min-height:400px;
+	background:#ffffff;	
+	min-width:500px;
+	border:solid 1px #d4d4d4;
+	padding:0 20px 20px 20px;
+}
+
+.ToolBar
+{
+	border:solid 1px #d4d4d4;
+	padding:10px;
+	margin-bottom:20px;
+}
+
+.GridContainer
+{
+	background:#ECF5FB;
+	min-height:300px;
+	border:solid 1px #d4d4d4;
+}
+
+
+.ModalPopupBG
+{
+	background-color: #666699;
+	filter: alpha(opacity=50);
+	opacity: 0.7;
+}
+
+.popup_Container {
+	background-color:#fffeb2;
+	border:2px solid #000000;
+	padding: 0px 0px 0px 0px;
+}
+
+.popupConfirmation
+{
+	width: 300px;
+	height: 200px;
+}
+
+.popup_Titlebar {
+	background: url(../../images/titlebar_bg.jpg);
+	height: 29px;
+}
+
+.popup_Body
+{
+	padding:15px 15px 15px 15px;
+	font-family:Arial;
+	font-weight:bold;
+	font-size:12px;
+	color:#000000;
+	line-height:15pt;
+	clear:both;
+	padding:20px;
+}
+
+.TitlebarLeft 
+{
+	float:left;
+	padding-left:5px;
+	padding-top:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#FFFFFF;
+}
+.TitlebarRight 
+{
+	background:url(../../images/cross_icon_normal.png);
+	background-position:right;
+	background-repeat:no-repeat;
+	height:15px;
+	width:16px;
+	float:right;
+	cursor:pointer;
+	margin-right:5px;
+	margin-top:5px;
+}
+
+.popup_Buttons
+{
+	margin:10px;
+}
+
+
+
+
+/* Catalog2 and Detail Page */
+
+
+h4.mainheading {
+    background-color: darkgrey;
+    margin-top: 53px;
+    padding: 10px;
+}
+
+h2.mainheading {
+    background: darkgray;
+    padding: 10px;
+    margin-right: 670px;
+}
+
+.subheading {
+    display: inline-block;
+    line-height: 10px;
+    margin-left: 28px;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+
+.sideheading {
+    display: inline-block;
+    float: right;
+    background-color: darkgrey;
+    padding: 0px 24px 8px 41px;
+    line-height: 10%;
+    margin-right: 673px;
+}
+
+.cart-button {
+    float: right;
+}
+
+.details {
+    display: inline-block;
+}
+
+.button {
+    background: green;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.button-cart {
+    background: green;
+    color: white;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 5px 15px 5px 5px;
+}
+
+.button-cart-one {
+    background: green;
+    color: white;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 5px 15px 5px 10px;
+}
+
+.menu {}
+
+.menu a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu span {
+    color: grey;
+}
+
+span.heading {
+    padding: 10px;
+}
+
+.pagination {
+    color: grey;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.pagination a {
+    text-decoration: none;
+}
+
+.Description {
+    padding: 10px;
+    color: grey;
+    line-height: 10px;
+}
+
+.navheading {
+    margin: 10px;
+    padding-top: 38px;
+}
+
+span.headname {
+   color: blue;
+}
+
+span.stars {
+    padding: 10px;
+    color: blue;
+}
+
+.data {
+    color: grey;
+}
+
+span.data {
+    color: grey;
+}
+
+.headingtab {
+    border-bottom: 3px solid blue;
+}
+
+.menu-links {
+    color: blue;
+}
+
+.detailheading {
+    margin-top: 6px;
+    background-color: #eee;
+    padding: 0px 0px 0px 7px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+span.details {
+    color: grey;
+}
+
+.ratings{
+	display: inline;
+	float: left;
+}
+.starrating{
+	margin-top: 63px;
+}
+#rating span:not(.menu-links):not(.drop-arrow){
+  
+    color:#ffba00;
+}
+.customer {
+    border-bottom:1px solid #000;
+        padding-left: 112px;
+}
+
+
+
+progress {
+    background: rgb(243, 243, 243);
+
+/* style rules */
+}
+progress::-webkit-progress-bar {
+background: rgb(243, 243, 243);
+/* style rules */
+}
+progress::-webkit-progress-value {
+    background-color: #ffba00; 
+/* style rules */
+} 
+progress::-moz-progress-bar {
+/* style rules */
+background-color: #ffba00;
+}
+
+
+.coursetype {
+    
+     /*margin-left: 15%;
+     float: left;
+    margin-top: 10px;
+    
+    padding: 15px 15px 15px 3px;
+    width: 30%;*/
+	margin-left: 22%; */
+    /* float: left; */
+    /* margin-top: 10px; */
+    padding: 15px 15px 15px 3px;
+    /* width: 30%; */
+    clear: both;
+}	
+
+.catlog-desc {
+    margin: 4px 0 4px 0;
+    width: 90%;
+    border: none;
+    display: inline-block;
+    text-align: justify;
+}
+.arrow-1 {
+    border-color: transparent;
+    border-style: dashed dashed solid;
+    border-width: 0 8.5px 8.5px;
+    position: relative;
+    left: 37%;
+  
+    height: 0;
+    width: 0;
+   
+    animation: gb__a .2s;
+    border-bottom-color: #ccc;
+    top: -1px;
+    z-index: 13;
+}
+
+.arrow-2 {
+    border-color: transparent;
+    border-bottom-color: white;
+    border-style: dashed dashed solid;
+    border-width: 0 8.5px 8.5px;
+    position: relative;
+    left: 37%;
+    top: -7px;
+    z-index: 14;
+    height: 0;
+    width: 0;
+  
+    animation: gb__a .2s;
+}
+.arrow{
+    display:none;
+}
+
+.location-data
+{
+margin-top: 3px;
+margin-left: 10px
+}
+
+.icon-style-data {
+        margin-left: 10px;
+    text-align: center;
+    /* margin-top: 5px; */
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 12px;
+    /* margin: 0 auto; */
+    /* text-align: center; */
+    left: 0;
+    right: 0;
+}
+.sortingIcons-image {
+    height:16px;
+    width:16px;
+    margin-bottom: -4px;
+    margin-left: 3px;
+}
