@@ -1,17 +1,17 @@
 .site-logo {
   float: left;
-}
 
-.site-logo__link {
-  display: block;
-  background-size: contain;
-  background-position: left center;
-  width: 100px;
-  height: 105px;
-}
+  &__link {
+    display: block;
+    background-size: contain;
+    background-position: left center;
+    width: 100px;
+    height: 105px;
+  }
 
-.site-logo__text {
-  display: none;
+  &__text {
+    display: none;
+  }
 }
 
 .site-header {
@@ -23,25 +23,16 @@
   border-bottom: 2px solid #f5f5f5;
   line-height: 1.5;
   height: 103px;
-  padding: 0 20px;
   margin-bottom: 50px;
-  min-width: 960px;
+
+  .site-header__inner {
+    width: 1280px;
+    margin: 0 auto;
+  }
 }
 
 .site-header * {
   box-sizing: border-box;
-}
-
-.site-header li {
-  list-style-type: none;
-}
-
-.site-header a,
-.site-header a:active,
-.site-header a:focus,
-.site-header a:hover,
-.site-header a:visited {
-  color: #ff553e;
 }
 
 .site-header__primary,
@@ -64,10 +55,10 @@
 }
 
 .site-header__primary {
-  width: 12%;
+  width: 280px;
 }
 
 .site-header__secondary {
-  width: 88%;
+  width: 500px;
   position: static;
 }

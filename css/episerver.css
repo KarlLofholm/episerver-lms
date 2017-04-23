@@ -260,16 +260,14 @@ table {
 
 .site-logo {
   float: left; }
-
-.site-logo__link {
-  display: block;
-  background-size: contain;
-  background-position: left center;
-  width: 100px;
-  height: 105px; }
-
-.site-logo__text {
-  display: none; }
+  .site-logo__link {
+    display: block;
+    background-size: contain;
+    background-position: left center;
+    width: 100px;
+    height: 105px; }
+  .site-logo__text {
+    display: none; }
 
 .site-header {
   left: 0;
@@ -280,22 +278,13 @@ table {
   border-bottom: 2px solid #f5f5f5;
   line-height: 1.5;
   height: 103px;
-  padding: 0 20px;
-  margin-bottom: 50px;
-  min-width: 960px; }
+  margin-bottom: 50px; }
+  .site-header .site-header__inner {
+    width: 1280px;
+    margin: 0 auto; }
 
 .site-header * {
   box-sizing: border-box; }
-
-.site-header li {
-  list-style-type: none; }
-
-.site-header a,
-.site-header a:active,
-.site-header a:focus,
-.site-header a:hover,
-.site-header a:visited {
-  color: #ff553e; }
 
 .site-header__primary,
 .site-header__secondary {
@@ -313,10 +302,10 @@ table {
   float: left; }
 
 .site-header__primary {
-  width: 12%; }
+  width: 280px; }
 
 .site-header__secondary {
-  width: 88%;
+  width: 500;
   position: static; }
 
 .site-footer {
@@ -630,29 +619,26 @@ table {
   font-size: 16px;
   color: #fff !important; }
 
-/*
-//
-//
-// Colors
-//
-$color-primary-1: #ff553e;
-$color-primary-2: #05149B;
-$color-white: #fff;
-$color-border: #ccc;
-$color-dark-grey: #7b7a79;
-$color-medium-grey: #E6E4E3;
-$color-light-grey: #F5F3F1;
-$text: #333;
+.clearfix {
+  *zoom: 1; }
+  .clearfix:after, .clearfix:before {
+    display: table;
+    line-height: 0;
+    content: ""; }
+  .clearfix:after {
+    clear: both; }
 
-*/
 .lto-page-container {
   width: 1280px;
   margin: 0 auto; }
+  .lto-page-container__inner {
+    width: 100%;
+    margin: 0 20px; }
 
 .lto-primary-nav {
-  width: 220px;
+  width: 200px;
   float: left;
-  margin-right: 100px; }
+  margin-right: 80px; }
 
 .lto-primary-nav ul {
   list-style: none;
@@ -723,3 +709,8 @@ $text: #333;
 
 #dvListViewLink {
   display: none; }
+
+.lto-body-container h2 {
+  text-align: left;
+  font-size: 38px;
+  margin-bottom: 20px; }

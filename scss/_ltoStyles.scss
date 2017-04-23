@@ -1,28 +1,32 @@
-/*
-//
-//
-// Colors
-//
-$color-primary-1: #ff553e;
-$color-primary-2: #05149B;
-$color-white: #fff;
-$color-border: #ccc;
-$color-dark-grey: #7b7a79;
-$color-medium-grey: #E6E4E3;
-$color-light-grey: #F5F3F1;
-$text: #333;
+.clearfix {
+	*zoom: 1;
 
-*/
+	&:after,
+	&:before {
+		display: table;
+		line-height: 0;
+		content: "";
+	}
+
+	&:after {
+		clear: both;
+	}
+}
 
 .lto-page-container {
 	width: 1280px;
 	margin: 0 auto;
+
+	&__inner {
+		width: 100%;
+		margin: 0 20px;
+	}
 }
 
 .lto-primary-nav {
-	width: 220px;
+	width: 200px;
 	float: left;
-	margin-right: 100px;
+	margin-right: 80px;
 }
 
 .lto-primary-nav ul {
@@ -108,4 +112,12 @@ $text: #333;
 
 #dvListViewLink {
 	display: none;
+}
+
+.lto-body-container {
+	h2 {
+		text-align: left;
+		font-size: 38px;
+		margin-bottom: 20px;
+	}
 }
