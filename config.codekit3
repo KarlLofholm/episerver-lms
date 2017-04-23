@@ -33,30 +33,6 @@
 		"oAP": "\/_lms-code-blocks\/script-header.html",
 		"oF": 1
 		},
-	"\/_lms-code-blocks_org\/document-top.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_lms-code-blocks_org\/document-top.html",
-		"oF": 0
-		},
-	"\/_lms-code-blocks_org\/form-footer.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_lms-code-blocks_org\/form-footer.html",
-		"oF": 0
-		},
-	"\/_lms-code-blocks_org\/form-header.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_lms-code-blocks_org\/form-header.html",
-		"oF": 0
-		},
-	"\/_lms-code-blocks_org\/script-header.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_lms-code-blocks_org\/script-header.html",
-		"oF": 0
-		},
 	"\/_shared\/footer.kit": {
 		"ft": 2048,
 		"oA": 1,
@@ -245,55 +221,6 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/events\/uploads\/Episerver\/bootstrap.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/events\/uploads\/Episerver\/bootstrap-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/Events\/uploads\/Episerver\/legacy-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/Events\/uploads\/Episerver\/legacy-min-min.css",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/events\/uploads\/Episerver\/legacy.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/events\/uploads\/Episerver\/legacy-min.css",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/Events\/uploads\/Episerver\/ltoStyles-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/Events\/uploads\/Episerver\/ltoStyles-min-min.css",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/events\/uploads\/Episerver\/ltoStyles.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/events\/uploads\/Episerver\/ltoStyles-min.css",
-		"oF": 0,
-		"oS": 0
-		},
 	"\/events\/uploads\/Episerver\/SimplonNorm-Light-WebS.woff": {
 		"ft": 8192,
 		"oA": 2,
@@ -335,24 +262,6 @@
 		"oA": 2,
 		"oAP": "\/events\/uploads\/Episerver\/SimplonNorm-Regular.otf",
 		"oF": 0
-		},
-	"\/events\/uploads\/Episerver\/site.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/events\/uploads\/Episerver\/site-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/events\/uploads\/Episerver\/siteheader.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/events\/uploads\/Episerver\/siteheader-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
 		},
 	"\/events\/uploads\/Episerver\/stylesdesign2.css": {
 		"aP": 1,
@@ -542,6 +451,45 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/scss\/_legacy.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_legacy.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_ltoStyles.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_ltoStyles.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/episerver.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/episerver.css",
+		"oF": 3,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/search.html": {
 		"ft": 8192,
