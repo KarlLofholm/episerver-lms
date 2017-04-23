@@ -301,6 +301,17 @@
 		"oAP": "\/Events\/WebResource.axd",
 		"oF": 0
 		},
+	"\/images\/buttons.png": {
+		"ft": 32768,
+		"iS": 94685,
+		"oA": 0,
+		"oAP": "\/images\/buttons.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/images\/cust\/asc.png": {
 		"ft": 32768,
 		"iS": 1795,
@@ -450,6 +461,12 @@
 		"oAP": "\/search.html",
 		"oF": 3
 		},
+	"\/pages\/styleguide.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/styleguide.html",
+		"oF": 2
+		},
 	"\/README.md": {
 		"cS": 0,
 		"eF": 1,
@@ -467,6 +484,19 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/scss\/_buttons.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_buttons.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/scss\/_fonts.scss": {
 		"aP": 0,
@@ -546,6 +576,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/scss\/_variables.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_variables.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/scss\/episerver.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -563,6 +606,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/search.html",
+		"oF": 0
+		},
+	"\/styleguide.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/styleguide.html",
 		"oF": 0
 		}
 	},

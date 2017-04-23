@@ -209,7 +209,8 @@ body {
   line-height: 1.4;
   font-family: "Simplon Norm", sans-serif;
   font-weight: 300;
-  line-height: 1.5; }
+  line-height: 1.5;
+  text-align: left; }
 
 a {
   color: #ff5336;
@@ -227,6 +228,35 @@ table {
   background-color: transparent;
   border-collapse: collapse;
   border-spacing: 0; }
+
+/*buttons styling*/
+.lto-button {
+  background-color: #05149B;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  text-align: center;
+  line-height: 1;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Simplon Norm",sans-serif;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: middle;
+  user-select: none;
+  transition: all 0.2s ease-in-out; }
+  .lto-button:active, .lto-button:focus, .lto-button:hover {
+    text-decoration: none !important;
+    background-color: #030e6a;
+    color: #fff; }
+  .lto-button .fa {
+    vertical-align: top;
+    font-size: 16px; }
+  .lto-button span {
+    line-height: 1;
+    padding: 0 4px;
+    vertical-align: middle; }
 
 .site-logo {
   float: left; }
@@ -654,47 +684,6 @@ $text: #333;
   width: 960px;
   float: left; }
 
-/*buttons styling*/
-.lto-button {
-  background-color: #fff;
-  color: #ff553e;
-  border: 2px solid #ff553e;
-  font-weight: 400;
-  padding: 0.8em;
-  text-align: center;
-  line-height: 1;
-  min-width: 180px;
-  font-size: 16px;
-  font-family: "Simplon Norm",sans-serif; }
-
-.lto-button:hover {
-  text-decoration: none !important;
-  border-color: #ff553e;
-  background-color: #ff553e;
-  color: #fff; }
-
-/*lto- navigation buttons*/
-.lto-sm-button {
-  background: #05149b;
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1rem;
-  /*padding: 7px 40px;
-	margin: 7px 10px;*/
-  padding: 12px 30px;
-  min-width: 100px;
-  margin: 12px;
-  font-family: "Simplon Norm",sans-serif;
-  text-align: center; }
-
-.lto-sm-button span {
-  display: inline-block; }
-
-.lto-sm-button:hover {
-  background: #071acc;
-  text-decoration: none !important; }
-
 .lto-body-container select[size] {
   width: inherit; }
 
@@ -723,9 +712,9 @@ $text: #333;
 .lto-body-container select[name="event_address_id"],
 .lto-body-container select[name="event_id"],
 .lto-body-container select[name="event_type_id"] {
-  width: 500px;
+  padding: 4px 5px;
+  width: 100%;
   min-height: 100px;
-  padding: 10px 0 10px 10px;
   border-radius: 5px;
   margin: 0 auto 30px; }
 

@@ -46,7 +46,6 @@ $text: #333;
 }
 
 .lto-primary-nav ul li a {
-
 	font-weight: 400;
 	font-size: 16px;
 }
@@ -60,50 +59,6 @@ $text: #333;
 .lto-body-container {
 	width: 960px;
 	float: left;
-}
-/*buttons styling*/
-.lto-button {
-	background-color: #fff;
-	color: #ff553e;
-	border: 2px solid #ff553e;
-	font-weight: 400;
-	padding: 0.8em;
-	text-align: center;
-	line-height: 1;
-	min-width: 180px;
-	font-size: 16px;
-	font-family: "Simplon Norm",sans-serif;
-}
-
-.lto-button:hover {
-	text-decoration: none !important;
-	border-color: #ff553e;
-	background-color: #ff553e;
-	color: #fff;
-}
-/*lto- navigation buttons*/
-.lto-sm-button {
-	background: #05149b;
-	color: #fff;
-	font-weight: 600;
-	text-decoration: none;
-	font-size: 1rem;
-	/*padding: 7px 40px;
-	margin: 7px 10px;*/
-	padding: 12px 30px;
-	min-width: 100px;
-	margin: 12px;
-	font-family: "Simplon Norm",sans-serif;
-	text-align: center;
-}
-
-.lto-sm-button span {
-	display: inline-block;
-}
-
-.lto-sm-button:hover {
-	background: #071acc;
-	text-decoration: none !important;
 }
 
 .lto-body-container select[size] {
@@ -140,9 +95,9 @@ $text: #333;
 .lto-body-container select[name="event_address_id"],
 .lto-body-container select[name="event_id"],
 .lto-body-container select[name="event_type_id"] {
-	width: 500px;
+	padding: 4px 5px;
+	width: 100%;
 	min-height: 100px;
-	padding: 10px 0 10px 10px;
 	border-radius: 5px;
 	margin: 0 auto 30px;
 }
