@@ -67,6 +67,16 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/css\/episerver.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/episerver-min.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/Events\/images\/border\/trans_spacer.gif": {
 		"ft": 4194304,
 		"iS": 855,
@@ -239,6 +249,12 @@
 		"oAP": "\/events\/uploads\/Episerver\/SimplonNorm-LightItalic-WebS.woff",
 		"oF": 0
 		},
+	"\/Events\/uploads\/Episerver\/SimplonNorm-Medium-WebS.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Events\/uploads\/Episerver\/SimplonNorm-Medium-WebS.ttf",
+		"oF": 0
+		},
 	"\/events\/uploads\/Episerver\/SimplonNorm-Medium-WebS.woff": {
 		"ft": 8192,
 		"oA": 2,
@@ -249,6 +265,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/events\/uploads\/Episerver\/SimplonNorm-Medium.otf",
+		"oF": 0
+		},
+	"\/Events\/uploads\/Episerver\/SimplonNorm-Regular-WebS.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Events\/uploads\/Episerver\/SimplonNorm-Regular-WebS.ttf",
 		"oF": 0
 		},
 	"\/events\/uploads\/Episerver\/SimplonNorm-Regular-WebS.woff": {
