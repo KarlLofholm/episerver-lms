@@ -1,0 +1,69 @@
+body,
+html {
+  font-family: 'Simplon Norm', Arial, Gill Sans MT;
+  font-size: 16px;
+  line-height: 1.42857;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: Melior, Arial, Gill Sans MT;
+  font-weight: normal !important;
+}
+
+h2,
+h3,
+h4 {
+  font-family: 'Simplon Norm', Arial, Gill Sans MT;
+  font-weight: bold;
+}
+
+.epiContent h2 {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+li {
+  line-height: inherit;
+}
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+button,
+html,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: "Simplon Norm", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+a {
+  color: #ff5336;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #e92200;
+}
+
+a:visited {
+  color: #ff5336;
+}
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}

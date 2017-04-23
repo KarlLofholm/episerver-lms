@@ -444,12 +444,6 @@
 		"oAP": "\/index.html",
 		"oF": 3
 		},
-	"\/pages\/search.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/pages\/search.html",
-		"oF": 0
-		},
 	"\/pages\/search.kit": {
 		"ft": 2048,
 		"oA": 0,
@@ -474,7 +468,7 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/scss\/_legacy.scss": {
+	"\/scss\/_fonts.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -482,7 +476,46 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/scss\/_legacy.css",
+		"oAP": "\/scss\/_fonts.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_footer.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_footer.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_header.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_header.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_icons.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_icons.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -496,6 +529,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/scss\/_ltoStyles.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_main.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_main.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
