@@ -136,6 +136,115 @@
 		"oAP": "\/Events\/ScriptResource.axd",
 		"oF": 0
 		},
+	"\/Events\/uploads\/Episerver\/_archive\/bootstrap.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/bootstrap-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/legacy-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/legacy-min-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/legacy.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/legacy-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/ltoStyles.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/ltoStyles-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Light-WebS.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Light-WebS.woff",
+		"oF": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Light.otf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Light.otf",
+		"oF": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-LightItalic-WebS.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-LightItalic-WebS.woff",
+		"oF": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Medium-WebS.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Medium-WebS.woff",
+		"oF": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Medium.otf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Medium.otf",
+		"oF": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Regular-WebS.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Regular-WebS.woff",
+		"oF": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Regular.otf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/SimplonNorm-Regular.otf",
+		"oF": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/site.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/site-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/siteheader.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/siteheader-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/Events\/uploads\/Episerver\/_archive\/stylesdesign2.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/Events\/uploads\/Episerver\/_archive\/stylesdesign2-min.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/events\/uploads\/Episerver\/bootstrap.js": {
 		"ft": 64,
 		"mi": 1,
@@ -145,6 +254,16 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/Events\/uploads\/Episerver\/legacy-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/Events\/uploads\/Episerver\/legacy-min-min.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/events\/uploads\/Episerver\/legacy.css": {
 		"aP": 1,
 		"bl": 0,
@@ -152,6 +271,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/events\/uploads\/Episerver\/legacy-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/Events\/uploads\/Episerver\/ltoStyles-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/Events\/uploads\/Episerver\/ltoStyles-min-min.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -384,6 +513,18 @@
 		"oAP": "\/index.html",
 		"oF": 3
 		},
+	"\/pages\/search.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/pages\/search.html",
+		"oF": 0
+		},
+	"\/pages\/search.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/search.html",
+		"oF": 3
+		},
 	"\/README.md": {
 		"cS": 0,
 		"eF": 1,
@@ -401,6 +542,12 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/search.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/search.html",
+		"oF": 0
 		}
 	},
 "hooks": [
