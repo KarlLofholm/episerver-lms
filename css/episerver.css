@@ -585,33 +585,33 @@ $text: #333;
 */
 @font-face {
   font-family: 'Simplon Norm';
-  src: url("/events/uploads/Episerver/SimplonNorm-Medium-WebS.ttf") format("truetype"), url("/events/uploads/Episerver/SimplonNorm-Medium-WebS.woff") format("woff"), url("/events/uploads/Episerver/SimplonNorm-Regular-WebS.ttf") format("truetype"), url("/events/uploads/Episerver/SimplonNorm-Regular-WebS.woff") format("woff"); }
+  src: url("events/uploads/Episerver/SimplonNorm-Medium-WebS.ttf") format("truetype"), url("events/uploads/Episerver/SimplonNorm-Medium-WebS.woff") format("woff"), url("events/uploads/Episerver/SimplonNorm-Regular-WebS.ttf") format("truetype"), url("events/uploads/Episerver/SimplonNorm-Regular-WebS.woff") format("woff"); }
 
 @font-face {
   font-family: "Simplon Norm";
-  src: url("/events/uploads/Episerver/SimplonNorm-Medium-WebS.eot");
-  src: url("/events/uploads/Episerver/SimplonNorm-Medium-WebS.eot#iefix") format("embedded-opentype"), url("/events/uploads/Episerver/SimplonNorm-Medium-WebS.woff") format("woff"), url("/events/uploads/Episerver/SimplonNorm-Medium-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Medium-Web/S/SimplonNorm-Medium-WebS.svg") format("svg");
+  src: url("events/uploads/Episerver/SimplonNorm-Medium-WebS.eot");
+  src: url("events/uploads/Episerver/SimplonNorm-Medium-WebS.eot#iefix") format("embedded-opentype"), url("events/uploads/Episerver/SimplonNorm-Medium-WebS.woff") format("woff"), url("events/uploads/Episerver/SimplonNorm-Medium-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Medium-Web/S/SimplonNorm-Medium-WebS.svg") format("svg");
   font-weight: 600;
   font-style: normal; }
 
 @font-face {
   font-family: "Simplon Norm";
-  src: url("/events/uploads/Episerver/SimplonNorm-Regular-WebS.eot");
-  src: url("/events/uploads/Episerver/SimplonNorm-Regular-WebS.eot#iefix") format("embedded-opentype"), url("/events/uploads/Episerver/SimplonNorm-Regular-WebS.woff") format("woff"), url("/events/uploads/Episerver/SimplonNorm-Regular-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Regular-Web/S/SimplonNorm-Regular-WebS.svg") format("svg");
+  src: url("events/uploads/Episerver/SimplonNorm-Regular-WebS.eot");
+  src: url("events/uploads/Episerver/SimplonNorm-Regular-WebS.eot#iefix") format("embedded-opentype"), url("events/uploads/Episerver/SimplonNorm-Regular-WebS.woff") format("woff"), url("events/uploads/Episerver/SimplonNorm-Regular-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Regular-Web/S/SimplonNorm-Regular-WebS.svg") format("svg");
   font-weight: 300;
   font-style: normal; }
 
 @font-face {
   font-family: "Simplon Norm";
-  src: url("/events/uploads/Episerver/SimplonNorm-Light-WebS.eot");
-  src: url("/events/uploads/Episerver/SimplonNorm-Light-WebS.eot#iefix") format("embedded-opentype"), url("/events/uploads/Episerver/SimplonNorm-Light-WebS.woff") format("woff"), url("/events/uploads/Episerver/SimplonNorm-Light-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Light-Web/S/SimplonNorm-Light-WebS.svg") format("svg");
+  src: url("events/uploads/Episerver/SimplonNorm-Light-WebS.eot");
+  src: url("events/uploads/Episerver/SimplonNorm-Light-WebS.eot#iefix") format("embedded-opentype"), url("events/uploads/Episerver/SimplonNorm-Light-WebS.woff") format("woff"), url("events/uploads/Episerver/SimplonNorm-Light-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Light-Web/S/SimplonNorm-Light-WebS.svg") format("svg");
   font-weight: 100;
   font-style: normal; }
 
 @font-face {
   font-family: "Simplon Norm";
-  src: url("/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.eot");
-  src: url("/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.eot#iefix") format("embedded-opentype"), url("/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.woff") format("woff"), url("/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-LightItalic-Web/S/SimplonNorm-LightItalic-WebS.svg") format("svg");
+  src: url("events/uploads/Episerver/SimplonNorm-LightItalic-WebS.eot");
+  src: url("events/uploads/Episerver/SimplonNorm-LightItalic-WebS.eot#iefix") format("embedded-opentype"), url("events/uploads/Episerver/SimplonNorm-LightItalic-WebS.woff") format("woff"), url("events/uploads/Episerver/SimplonNorm-LightItalic-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-LightItalic-Web/S/SimplonNorm-LightItalic-WebS.svg") format("svg");
   font-weight: 100;
   font-style: italic; }
 
@@ -645,9 +645,9 @@ $text: #333;
   font-weight: 400;
   font-size: 16px; }
 
-.lto-primary-nav ul li a:hover,
 .lto-primary-nav ul li a:active,
-.lto-primary-nav ul li a:focus {
+.lto-primary-nav ul li a:focus,
+.lto-primary-nav ul li a:hover {
   color: #333; }
 
 .lto-body-container {
@@ -660,7 +660,7 @@ $text: #333;
   color: #ff553e;
   border: 2px solid #ff553e;
   font-weight: 400;
-  padding: .8em;
+  padding: 0.8em;
   text-align: center;
   line-height: 1;
   min-width: 180px;
@@ -712,17 +712,17 @@ $text: #333;
 
 .list-view table tbody tr td {
   border-bottom: 1px solid #E6E4E3;
-  padding: 30px 0px 30px 0px; }
+  padding: 30px 0; }
 
 .tab-container {
   height: 40px;
   background: #F5F3F1;
   border-top: 1px solid #E6E4E3; }
 
-.lto-body-container select[name="event_address_id"],
-.lto-body-container select[name="event_type_id"],
 .lto-body-container select[name="eventMonthYear"],
-.lto-body-container select[name="event_id"] {
+.lto-body-container select[name="event_address_id"],
+.lto-body-container select[name="event_id"],
+.lto-body-container select[name="event_type_id"] {
   width: 500px;
   min-height: 100px;
   padding: 10px 0 10px 10px;
