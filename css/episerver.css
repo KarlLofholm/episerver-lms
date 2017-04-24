@@ -1,35 +1,3 @@
-@font-face {
-  font-family: 'Simplon Norm';
-  src: url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Medium-WebS.ttf") format("truetype"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Medium-WebS.woff") format("woff"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Regular-WebS.ttf") format("truetype"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Regular-WebS.woff") format("woff"); }
-
-@font-face {
-  font-family: "Simplon Norm";
-  src: url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Medium-WebS.eot");
-  src: url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Medium-WebS.eot#iefix") format("embedded-opentype"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Medium-WebS.woff") format("woff"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Medium-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Medium-Web/S/SimplonNorm-Medium-WebS.svg") format("svg");
-  font-weight: 600;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Simplon Norm";
-  src: url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Regular-WebS.eot");
-  src: url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Regular-WebS.eot#iefix") format("embedded-opentype"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Regular-WebS.woff") format("woff"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Regular-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Regular-Web/S/SimplonNorm-Regular-WebS.svg") format("svg");
-  font-weight: 300;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Simplon Norm";
-  src: url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Light-WebS.eot");
-  src: url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Light-WebS.eot#iefix") format("embedded-opentype"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Light-WebS.woff") format("woff"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-Light-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Light-Web/S/SimplonNorm-Light-WebS.svg") format("svg");
-  font-weight: 100;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Simplon Norm";
-  src: url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.eot");
-  src: url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.eot#iefix") format("embedded-opentype"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.woff") format("woff"), url("https://inter.viewcentral.com/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-LightItalic-Web/S/SimplonNorm-LightItalic-WebS.svg") format("svg");
-  font-weight: 100;
-  font-style: italic; }
-
 .header-search__toggle-link:before,
 .icon-arrow,
 .lang-select__toggle-link:before {
@@ -305,7 +273,7 @@ table {
   width: 280px; }
 
 .site-header__secondary {
-  width: 500;
+  width: 500px;
   position: static; }
 
 .site-footer {
@@ -618,6 +586,29 @@ table {
 .site-footer__colophonLink {
   font-size: 16px;
   color: #fff !important; }
+
+#updPnlCatalogList .tooltip {
+  font-size: 16px; }
+  #updPnlCatalogList .tooltip .tooltiptext {
+    font-size: 12px; }
+
+#updPnlCatalogList .location {
+  font-size: 16px; }
+
+#updPnlCatalogList a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkBtnSchedule'],
+#updPnlCatalogList a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkSchPricing'] {
+  display: inline-block;
+  background: #F5F3F1;
+  margin: 5px 0;
+  padding: 5px 5px 3px;
+  border-radius: 5px; }
+  #updPnlCatalogList a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkBtnSchedule'] > div,
+  #updPnlCatalogList a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkSchPricing'] > div {
+    line-height: 20px;
+    vertical-align: middle; }
+  #updPnlCatalogList a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkBtnSchedule'] img,
+  #updPnlCatalogList a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkSchPricing'] img {
+    margin-bottom: 0; }
 
 .clearfix {
   *zoom: 1; }
