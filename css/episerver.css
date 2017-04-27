@@ -638,12 +638,7 @@ table {
   background: #F5F3F1;
   border-top: 2px solid #E6E4E3; }
 
-#dvTabBarContainer #dvtileViewLink {
-  display: none; }
-
-#dvTabBarContainer #dvListViewLink {
-  display: none; }
-
+#dvTabBarContainer #searchinput,
 #dvTabBarContainer #txtSearchInput {
   margin-top: 5px;
   height: 15px;

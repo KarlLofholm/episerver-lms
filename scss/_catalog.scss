@@ -53,14 +53,7 @@
   border-top: 2px solid $color-medium-grey;
 }
 
-#dvTabBarContainer #dvtileViewLink {
-  display: none;
-}
-
-#dvTabBarContainer #dvListViewLink {
-  display: none;
-}
-
+#dvTabBarContainer #searchinput,
 #dvTabBarContainer #txtSearchInput {
   margin-top: 5px;
   height: 15px;
