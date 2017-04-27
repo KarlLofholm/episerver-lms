@@ -1,0 +1,68 @@
+#updPnlCatalogList {
+  .tooltip {
+    font-size: 16px;
+
+    .tooltiptext {
+      font-size: 12px;
+    }
+  }
+
+  .location {
+    font-size: 16px;
+  }
+
+  .subtitle-name {
+    font-size: 14px;
+  }
+
+  .certificateTextHidden {
+    color: inherit !important;
+  }
+
+  a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkBtnSchedule'],
+  a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkSchPricing'] {
+    display: inline-block;
+    background: $color-light-grey;
+    margin: 5px 0;
+    padding: 5px 5px 3px;
+    border-radius: 5px;
+
+    > div {
+      line-height: 20px;
+      vertical-align: middle;
+    }
+
+    img {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.list-view table thead tr th {
+  border-color: $color-medium-grey;
+}
+
+.list-view table tbody tr td {
+  border-bottom: 2px solid $color-medium-grey;
+  padding: 30px 0;
+}
+
+.tab-container {
+  height: 40px;
+  background: $color-light-grey;
+  border-top: 2px solid $color-medium-grey;
+}
+
+#dvTabBarContainer #dvtileViewLink {
+  display: none;
+}
+
+#dvTabBarContainer #dvListViewLink {
+  display: none;
+}
+
+#dvTabBarContainer #txtSearchInput {
+  margin-top: 5px;
+  height: 15px;
+  margin-bottom: 0;
+}

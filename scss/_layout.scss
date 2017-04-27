@@ -1,0 +1,29 @@
+.clearfix {
+	*zoom: 1;
+
+	&:after,
+	&:before {
+		display: table;
+		line-height: 0;
+		content: "";
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.lto-page-container {
+	width: 1280px;
+	margin: 0 auto;
+
+	&__inner {
+		width: 100%;
+		margin: 0 20px;
+	}
+}
+
+.lto-body-container {
+	width: 960px;
+	float: left;
+}

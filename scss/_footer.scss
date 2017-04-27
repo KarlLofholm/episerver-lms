@@ -341,21 +341,9 @@
 
 /* SITE COLOPHON */
 .site-footer__colophon {
-  padding: 0 40px;
-  margin: 50px 0 0;
-}
-@media screen and (max-width: 1199px) {
-  .site-footer__colophon {
-    margin: 0;
-    padding: 0;
-  }
-}
-@media screen and (min-width: 1990px) {
-  .site-footer__colophon {
-    width: 1260px;
-    padding: 0;
-    margin: 50px auto 0;
-  }
+  width: 1260px;
+  padding: 0;
+  margin: 50px auto 0;
 }
 
 .site-footer__colophonText {

@@ -27,6 +27,12 @@
 		"oAP": "\/_lms-code-blocks\/form-header.html",
 		"oF": 1
 		},
+	"\/_lms-code-blocks\/login.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_lms-code-blocks\/login.html",
+		"oF": 0
+		},
 	"\/_lms-code-blocks\/script-header.html": {
 		"ft": 8192,
 		"oA": 0,
@@ -443,6 +449,12 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/login-continue.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/login-continue.html",
+		"oF": 0
+		},
 	"\/pages\/catalog.kit": {
 		"ft": 2048,
 		"oA": 0,
@@ -454,6 +466,18 @@
 		"oA": 0,
 		"oAP": "\/index.html",
 		"oF": 3
+		},
+	"\/pages\/login-continue.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/login-continue.html",
+		"oF": 2
+		},
+	"\/pages\/login.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/login.html",
+		"oF": 2
 		},
 	"\/pages\/search.kit": {
 		"ft": 2048,
@@ -498,6 +522,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/scss\/_catalog.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_catalog.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/scss\/_fonts.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -520,6 +557,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/scss\/_footer.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_forms.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_forms.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -550,7 +600,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/scss\/_ltoStyles.scss": {
+	"\/scss\/_layout.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -558,7 +608,20 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/scss\/_ltoStyles.css",
+		"oAP": "\/scss\/_layout.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_lto-primary-nav.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_lto-primary-nav.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -572,19 +635,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/scss\/_main.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/scss\/_updPnlCatalogList.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/scss\/_updPnlCatalogList.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

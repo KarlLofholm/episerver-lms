@@ -226,6 +226,26 @@ table {
     padding: 0 4px;
     vertical-align: middle; }
 
+.clearfix {
+  *zoom: 1; }
+  .clearfix:after, .clearfix:before {
+    display: table;
+    line-height: 0;
+    content: ""; }
+  .clearfix:after {
+    clear: both; }
+
+.lto-page-container {
+  width: 1280px;
+  margin: 0 auto; }
+  .lto-page-container__inner {
+    width: 100%;
+    margin: 0 20px; }
+
+.lto-body-container {
+  width: 960px;
+  float: left; }
+
 .site-logo {
   float: left; }
   .site-logo__link {
@@ -564,19 +584,9 @@ table {
 
 /* SITE COLOPHON */
 .site-footer__colophon {
-  padding: 0 40px;
-  margin: 50px 0 0; }
-
-@media screen and (max-width: 1199px) {
-  .site-footer__colophon {
-    margin: 0;
-    padding: 0; } }
-
-@media screen and (min-width: 1990px) {
-  .site-footer__colophon {
-    width: 1260px;
-    padding: 0;
-    margin: 50px auto 0; } }
+  width: 1260px;
+  padding: 0;
+  margin: 50px auto 0; }
 
 .site-footer__colophonText {
   font-size: 16px;
@@ -595,6 +605,12 @@ table {
 #updPnlCatalogList .location {
   font-size: 16px; }
 
+#updPnlCatalogList .subtitle-name {
+  font-size: 14px; }
+
+#updPnlCatalogList .certificateTextHidden {
+  color: inherit !important; }
+
 #updPnlCatalogList a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkBtnSchedule'],
 #updPnlCatalogList a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkSchPricing'] {
   display: inline-block;
@@ -610,80 +626,52 @@ table {
   #updPnlCatalogList a[id*='dtCatlogListView_ctrl'][id$='ctl00_lnkSchPricing'] img {
     margin-bottom: 0; }
 
-.clearfix {
-  *zoom: 1; }
-  .clearfix:after, .clearfix:before {
-    display: table;
-    line-height: 0;
-    content: ""; }
-  .clearfix:after {
-    clear: both; }
-
-.lto-page-container {
-  width: 1280px;
-  margin: 0 auto; }
-  .lto-page-container__inner {
-    width: 100%;
-    margin: 0 20px; }
-
-.lto-primary-nav {
-  width: 200px;
-  float: left;
-  margin-right: 80px; }
-
-.lto-primary-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-width: 1px 1px 0;
-  font-size: 20px; }
-
-.lto-primary-nav ul ul {
-  margin-bottom: 20px; }
-
-.lto-primary-nav ul li {
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  font-weight: 600;
-  color: #333; }
-
-.lto-primary-nav ul li a {
-  font-weight: 400;
-  font-size: 16px; }
-
-.lto-primary-nav ul li a:active,
-.lto-primary-nav ul li a:focus,
-.lto-primary-nav ul li a:hover {
-  color: #333; }
-
-.lto-body-container {
-  width: 960px;
-  float: left; }
-
-.lto-body-container select[size] {
-  width: inherit; }
-
-.lto-body-container select option {
-  font-size: 16px;
-  font-weight: 500; }
-
 .list-view table thead tr th {
-  padding: 20px 10px 6px 21px;
-  border-bottom: 1px solid #E6E4E3;
-  text-align: left;
-  font-weight: bold;
-  font-size: 12px;
-  white-space: nowrap; }
+  border-color: #E6E4E3; }
 
 .list-view table tbody tr td {
-  border-bottom: 1px solid #E6E4E3;
+  border-bottom: 2px solid #E6E4E3;
   padding: 30px 0; }
 
 .tab-container {
   height: 40px;
   background: #F5F3F1;
-  border-top: 1px solid #E6E4E3; }
+  border-top: 2px solid #E6E4E3; }
+
+#dvTabBarContainer #dvtileViewLink {
+  display: none; }
+
+#dvTabBarContainer #dvListViewLink {
+  display: none; }
+
+#dvTabBarContainer #txtSearchInput {
+  margin-top: 5px;
+  height: 15px;
+  margin-bottom: 0; }
+
+.lto-primary-nav {
+  width: 200px;
+  float: left;
+  margin: 0 80px 100px 0; }
+  .lto-primary-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-width: 1px 1px 0;
+    font-size: 20px; }
+    .lto-primary-nav ul ul {
+      margin-bottom: 20px; }
+    .lto-primary-nav ul li {
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+      font-weight: 600;
+      color: #333; }
+    .lto-primary-nav ul a {
+      font-weight: 400;
+      font-size: 16px; }
+      .lto-primary-nav ul a:active, .lto-primary-nav ul a:focus, .lto-primary-nav ul a:hover {
+        color: #333; }
 
 .lto-body-container select[name="eventMonthYear"],
 .lto-body-container select[name="event_address_id"],
@@ -694,14 +682,27 @@ table {
   min-height: 100px;
   border-radius: 5px;
   margin: 0 auto 30px; }
+  .lto-body-container select[name="eventMonthYear"] option,
+  .lto-body-container select[name="event_address_id"] option,
+  .lto-body-container select[name="event_id"] option,
+  .lto-body-container select[name="event_type_id"] option {
+    font-size: 14px; }
 
-#dvtileViewLink {
-  display: none; }
-
-#dvListViewLink {
-  display: none; }
-
-.lto-body-container h2 {
-  text-align: left;
-  font-size: 38px;
-  margin-bottom: 20px; }
+input[type="password"],
+input[type="text"],
+select,
+textarea {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border linear 0.2s,box-shadow linear 0.2s;
+  display: inline-block;
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  vertical-align: middle;
+  border-radius: 4px;
+  height: 30px;
+  margin-left: 15px;
+  margin-right: 15px; }

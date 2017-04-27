@@ -514,7 +514,8 @@
               <li><a href="#">Shopping Cart</a></li>
               <li><a href="#">My profile</a></li>
               <li><a href="#">Change Password</a></li>
-              <li><a href="#">Login/Logout</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="login-continue.html">Login continue</a></li>
             </ul>
           </li>
         </ul>
@@ -525,186 +526,196 @@
         <!--Litmos Training Ops Begins-->
   
 
+
 <!--Litmos Training Ops Begins-->
 <!-- Begin ViewCentral Body -->
 <center>
 
-  <table border='0' cellpadding='1' cellspacing='0' width='100%'>
-    <tr bgcolor='#ffffff'>
-      <td align='left'>
-        <font face='Simplon Norm' size='6' color='#333'><b>Search Page</b></font>
-      </td>
-    </tr>
+  <table border="0" cellpadding="1" cellspacing="0" width="100%">
+    <tbody>
+      <tr bgcolor="#f5f3f1">
+        <td align="center">
+          <font face="&quot;Simplon Norm&quot;, &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" size="5" color="#333"><b>Search Page</b></font>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </center>
-<table width='98%'>
-  <tr>
-    <td></td>
-    <td align='left'>
-      <font face='Simplon Norm' size='3' color='#000000'>For a complete list of courses and to register, click Search. To find a specific course, select from the options below
-        and then click Search.</font>
-    </td>
-  </tr>
+<table width="98%">
+  <tbody>
+    <tr>
+      <td></td>
+      <td align="left">
+        <font face="&quot;Simplon Norm&quot;, &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" size="3" color="#333">For a complete list of courses and to register, click Search. To find a specific course, select from the options
+          below and then click Search.</font>
+      </td>
+    </tr>
+  </tbody>
 </table><br>
 <center>
-  <div id='div_nav'>
-    <table border='0' cellpadding='0' cellspacing='0'>
-      <tr>
-        <td><img src='/Events/images/border/trans_spacer.gif' height='15' width='3'></td>
-        <a href='javascript:document.CurrentForm.reset();'>
-          <td valign=top nowrap width=104 align=center style='background:url(/Events/images/customer/reset.gif);background-repeat:no-repeat;background-color:#ffffff'
-              border='0'>
-            <a href='#'>
-              <font color=#000000 face=Verdana size=1 style=text-decoration:none>
-                <div class="lto-button"><i class="fa fa-plus" aria-hidden="true"></i> <span>Bulk Reg.</span></div>
+  <div id="div_nav">
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+          <td valign="top" nowrap="" width="104" align="center">
+            <a href="javascript:document.CurrentForm.reset();">
+              <font face="Verdana" size="1">
+                <div class="lto-button"><i class="fa fa-times" aria-hidden="true"></i> <span>Reset</span></div>
               </font>
             </a>
-            </td>
-        </a>
-        <td><img src='/Events/images/border/trans_spacer.gif' height='15' width='3'></td>
-        <a href='javascript:document.CurrentForm.submit();'>
-          <td valign=top nowrap width=104 align=center style='background:url(/Events/images/customer/next.gif);background-repeat:no-repeat;background-color:#ffffff'
-              border='0'>
-            <a href='#'>
-              <font color=#000000 face=Verdana size=1 style=text-decoration:none>
-                <div class="lto-button"><i class="fa fa-plus" aria-hidden="true"></i> <span>Bulk Reg.</span></div>
+          </td>
+          <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+          <td valign="top" nowrap="" width="104" align="center">
+            <a href="javascript:document.CurrentForm.submit();">
+              <font face="Verdana" size="1">
+                <div class="lto-button"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></div>
               </font>
             </a>
-            </td>
-        </a>
-        <td><img src='/Events/images/border/trans_spacer.gif' height='15' width='3'></td>
-      </tr>
+          </td>
+          <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+        </tr>
+      </tbody>
     </table>
   </div>
 
 </center>
 <form name="CurrentForm" method="GET" action="catalog2.aspx">
 
-  <table width=100%>
+  <table width="100%">
 
-    <tr>
-      <td width="10">&nbsp;</td>
-      <td>
-        <font face='Simplon Norm' size='3' color='#000000'><b>Location</b></font>
-      </td>
-    </tr>
-    <tr>
-      <td width="10">&nbsp;</td>
-      <td><select style='overflow:auto;' name='event_address_id' size=4 style='overflow:auto;' multiple>
-<option value='2'><strong>Stockholm, Sweden</strong>
-<option value='13'>Certification
-<option value='4'>Chicago, USA
-<option value='5'>Copenhagen, Denmark
-<option value='6'>Helsinki, Finland
-<option value='8'>London, UK
-<option value='3'>Sydney, Australia
-<option value='9'>Utrecht, Netherlands
+    <tbody>
+      <tr>
+        <td width="10">&nbsp;</td>
+        <td>
+          <font face="&quot;Simplon Norm&quot;, &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" size="3" color="#333"><b>Location</b></font>
+        </td>
+      </tr>
+      <tr>
+        <td width="10">&nbsp;</td>
+        <td><select style="overflow:auto;" name="event_address_id" size="4" multiple="">
+<option value="2">Stockholm, Sweden
+</option><option value="13">Certification
+</option><option value="4">Chicago, USA
+</option><option value="5">Copenhagen, Denmark
+</option><option value="6">Helsinki, Finland
+</option><option value="8">London, UK
+</option><option value="3">Sydney, Australia
+</option><option value="9">Utrecht, Netherlands
+</option><option value="17">Virtual Classroom
+</option><option value="16">Webex
+</option></select>
+        </td>
+      </tr>
+
+      <tr>
+        <td height="3"></td>
+      </tr>
+
+      <tr>
+        <td width="10">&nbsp;</td>
+        <td>
+          <font face="&quot;Simplon Norm&quot;, &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" size="3" color="#333"><b>Course Type</b></font>
+        </td>
+      </tr>
+      <tr>
+        <td width="10">&nbsp;</td>
+        <td><select style="overflow:auto;" name="event_type_id" size="4" multiple="">
+<option value="264">Classroom
+</option><option value="265">Live Online
+</option><option value="263">On-demand eLearning
+</option><option value="267">Onsite
+</option><option value="291">Policy Training
+</option></select>
+        </td>
+      </tr>
+
+      <tr>
+        <td height="3"></td>
+      </tr>
+
+      <tr>
+        <td width="10">&nbsp;</td>
+        <td>
+          <font face="&quot;Simplon Norm&quot;, &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" size="3" color="#333"><b>Months</b></font>
+        </td>
+      </tr>
+      <tr>
+        <td width="10">&nbsp;</td>
+        <td><select name="eventMonthYear" style="overflow:auto;" size="4" multiple="">
+<option value="null~null">No Start Date</option>
+<option value="3~2015">March, 2015</option>
+<option value="3~2017">March, 2017</option>
+<option value="4~2017">April, 2017</option>
+<option value="5~2017">May, 2017</option>
+<option value="6~2017">June, 2017</option>
+<option value="9~2017">September, 2017</option>
 </select>
-      </td>
-    </tr>
+        </td>
+      </tr>
 
-    <tr>
-      <td height="3"></td>
-    </tr>
+      <tr>
+        <td height="3"></td>
+      </tr>
 
-    <tr>
-      <td width="10">&nbsp;</td>
-      <td>
-        <font face='Simplon Norm' size='3' color='#000000'><b>Course Type</b></font>
-      </td>
-    </tr>
-    <tr>
-      <td width="10">&nbsp;</td>
-      <td><select style='overflow:auto;' name='event_type_id' size=4 style='overflow:auto;' multiple>
-<option value='264'>Classroom
-<option value='265'>Live Online
-<option value='263'>On-demand eLearning
-<option value='267'>Onsite
-<option value='291'>Policy Training
-</select>
-      </td>
-    </tr>
+      <tr>
+        <td width="10">&nbsp;</td>
+        <td>
+          <font face="&quot;Simplon Norm&quot;, &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" size="3" color="#333"><b>Course Name</b></font>
+        </td>
+      </tr>
+      <tr>
+        <td width="10">&nbsp;</td>
+        <td><select style="overflow:auto;" name="event_id" size="6" multiple="">
+<option value="2">Certification
+</option><option value="3">Certification for Episerver Developers - Remote
+</option><option value="4">Developing for the DXC
+</option><option value="57">Developing for the DXC - Storyline
+</option><option value="56">Developing for the DXC :: eLearning
+</option><option value="58">Developing for the DXC SL V2
+</option><option value="24">Ektron - Administrator
+</option><option value="26">Ektron - Developer Level 1
+</option><option value="27">Ektron - Developer Level 2
+</option><option value="25">Ektron - End User
+</option><option value="29">Ektron - System Administrator
+</option><option value="55">Episerver CMS - Administrator :: eLearning
+</option><option value="5">Episerver CMS - Administrator Training
+</option><option value="6">Episerver CMS - Advanced Development
+</option><option value="7">Episerver CMS - Advanced Editing
+</option><option value="8">Episerver CMS - Basic Editing
+</option><option value="53">Episerver CMS - Basic Editing :: eLearning
+</option><option value="39">Episerver CMS - Basic Editing-eLearning
+</option><option value="9">Episerver CMS - Developer Bootcamp
+</option><option value="10">Episerver CMS - Developing with MVC
+</option><option value="11">Episerver CMS - Development Fundamentals
+</option><option value="12">Episerver CMS - What's New For Editors
+</option><option value="13">Episerver CMS and Commerce - Developer Bootcamp
+</option><option value="14">Episerver CMS Developer Masterclass
+</option><option value="15">Episerver Commerce - Advanced Development
+</option><option value="16">Episerver Commerce - Developer Bootcamp
+</option><option value="17">Episerver Commerce - Development Fundamentals
+</option><option value="18">Episerver Commerce - Masterclass for Developers
+</option><option value="19">Episerver Commerce - Merchandiser training
+</option><option value="20">Episerver Find for Developers
+</option><option value="21">Episerver Find for Editors
+</option><option value="61">Intro to CMS
+</option><option value="59">TEST
+</option><option value="52">Test 3
+</option><option value="1">Test Course 1
+</option><option value="48">Test Course eLearning 1
+</option><option value="49">Test Course eLearning 2
+</option><option value="50">Test Course GoToMeeting 1
+</option><option value="60">TEST DXC CB
+</option><option value="62">vClassroom Test Course - GoToMeeting
+</option></select>
+        </td>
+      </tr>
 
-    <tr>
-      <td height="3"></td>
-    </tr>
+      <tr>
+        <td height="3"></td>
+      </tr>
 
-    <tr>
-      <td width="10">&nbsp;</td>
-      <td>
-        <font face='Simplon Norm' size='3' color='#000000'><b>Months</b></font>
-      </td>
-    </tr>
-    <tr>
-      <td width="10">&nbsp;</td>
-      <td><select name='eventMonthYear' style='overflow:auto;' size='4' multiple>
-<option value='null~null'>No Start Date</option>
-<option value='3~2015' >March, 2015</option>
-<option value='3~2017' >March, 2017</option>
-<option value='4~2017' >April, 2017</option>
-<option value='5~2017' >May, 2017</option>
-<option value='6~2017' >June, 2017</option>
-<option value='9~2017' >September, 2017</option>
-</select>
-      </td>
-    </tr>
-
-    <tr>
-      <td height="3"></td>
-    </tr>
-
-    <tr>
-      <td width="10">&nbsp;</td>
-      <td>
-        <font face='Simplon Norm' size='3' color='#000000'><b>Course Name</b></font>
-      </td>
-    </tr>
-    <tr>
-      <td width="10">&nbsp;</td>
-      <td><select style='overflow:auto;' name='event_id' size=6 style='overflow:auto;' multiple>
-<option value='51'>assessment test
-<option value='2'>Certification
-<option value='3'>Certification for Episerver Developers - Remote
-<option value='4'>Developing for the DXC
-<option value='56'>Developing for the DXC :: eLearning
-<option value='24'>Ektron - Administrator
-<option value='26'>Ektron - Developer Level 1
-<option value='27'>Ektron - Developer Level 2
-<option value='25'>Ektron - End User
-<option value='29'>Ektron - System Administrator
-<option value='55'>Episerver CMS - Administrator :: eLearning
-<option value='5'>Episerver CMS - Administrator Training
-<option value='6'>Episerver CMS - Advanced Development
-<option value='7'>Episerver CMS - Advanced Editing
-<option value='8'>Episerver CMS - Basic Editing
-<option value='53'>Episerver CMS - Basic Editing :: eLearning
-<option value='39'>Episerver CMS - Basic Editing-eLearning
-<option value='9'>Episerver CMS - Developer Bootcamp
-<option value='10'>Episerver CMS - Developing with MVC
-<option value='11'>Episerver CMS - Development Fundamentals
-<option value='12'>Episerver CMS - What's New For Editors
-<option value='13'>Episerver CMS and Commerce - Developer Bootcamp
-<option value='14'>Episerver CMS Developer Masterclass
-<option value='15'>Episerver Commerce - Advanced Development
-<option value='16'>Episerver Commerce - Developer Bootcamp
-<option value='17'>Episerver Commerce - Development Fundamentals
-<option value='18'>Episerver Commerce - Masterclass for Developers
-<option value='19'>Episerver Commerce - Merchandiser training
-<option value='20'>Episerver Find for Developers
-<option value='21'>Episerver Find for Editors
-<option value='52'>Test 3
-<option value='1'>Test Course 1
-<option value='48'>Test Course eLearning 1
-<option value='49'>Test Course eLearning 2
-<option value='50'>Test Course GoToMeeting 1
-</select>
-      </td>
-    </tr>
-
-    <tr>
-      <td height="3"></td>
-    </tr>
-
+    </tbody>
   </table>
 
   <input type="hidden" name="postingForm" value="default.aspx">
@@ -726,46 +737,41 @@
 
 
 <center>
-  <div id='div_nav'>
-    <table border='0' cellpadding='0' cellspacing='0'>
-      <tr>
-        <td><img src='/Events/images/border/trans_spacer.gif' height='15' width='3'></td>
-        <a href='javascript:document.CurrentForm.reset();'>
-          <td valign=top nowrap width=104 align=center style='background:url(/Events/images/customer/reset.gif);background-repeat:no-repeat;background-color:#ffffff'
-              border='0'>
-            <a href='javascript:document.CurrentForm.reset();'>
-              <font color=#000000 face=Verdana size=1 style=text-decoration:none>
-                <div class="lto-sm-button"><i class="fa fa-times" aria-hidden="true"></i> <span>Reset</span></div>
+  <div id="div_nav">
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+          <td valign="top" nowrap="" width="104" align="center">
+            <a href="javascript:document.CurrentForm.reset();">
+              <font face="Verdana" size="1">
+                <div class="lto-button"><i class="fa fa-times" aria-hidden="true"></i> <span>Reset</span></div>
               </font>
             </a>
-            </td>
-        </a>
-        <td><img src='/Events/images/border/trans_spacer.gif' height='15' width='3'></td>
-        <a href='javascript:document.CurrentForm.submit();'>
-          <td valign=top nowrap width=104 align=center style='background:url(/Events/images/customer/next.gif);background-repeat:no-repeat;background-color:#ffffff'
-              border='0'>
-            <a href='javascript:document.CurrentForm.submit();'>
-              <font color=#000000 face=Verdana size=1 style=text-decoration:none>
-                <div class="lto-sm-button"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></div>
+          </td>
+          <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+          <td valign="top" nowrap="" width="104" align="center">
+            <a href="javascript:document.CurrentForm.submit();">
+              <font face="Verdana" size="1">
+                <div class="lto-button"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></div>
               </font>
             </a>
-            </td>
-        </a>
-        <td><img src='/Events/images/border/trans_spacer.gif' height='15' width='3'></td>
-      </tr>
+          </td>
+          <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+        </tr>
+      </tbody>
     </table>
   </div>
 
-  <table cellpadding='2' width='100%'>
+  <table cellpadding="2" width="100%">
   </table>
 
   <br>
 </center>
 
 <!-- End ViewCentral Body -->
-<script language='javascript' src='/Events/incl/BusyBox.js' type='text/javascript'></script>
-</div>
-<!--Litmos Training Ops End-->
+<script language="javascript" src="/Events/incl/BusyBox.js" type="text/javascript"></script>
+
 </div>
 </div>
 <!--Litmos Training Ops End-->
