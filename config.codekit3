@@ -455,6 +455,18 @@
 		"oAP": "\/login-continue.html",
 		"oF": 0
 		},
+	"\/login.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/login.html",
+		"oF": 0
+		},
+	"\/pages\/calandar.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/calandar.html",
+		"oF": 2
+		},
 	"\/pages\/catalog.kit": {
 		"ft": 2048,
 		"oA": 0,

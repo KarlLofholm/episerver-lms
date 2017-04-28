@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+
+<link type="text/css" rel="stylesheet" href="../css/cust/stylesdesign2.css" />
+<script language="javascript">
+  function getCookieVal(offset) {
+    var endstr = document.cookie.indexOf(";", offset);
+    if (endstr == -1)
+      endstr = document.cookie.length;
+    return unescape(document.cookie.substring(offset, endstr));
+  }
+
+  function GetCookie(name) {
+    var arg = name + "=";
+    var alen = arg.length;
+    var clen = document.cookie.length;
+    var i = 0;
+    while (i < clen) {
+      var j = i + alen;
+      if (document.cookie.substring(i, j) == arg) {
+        var value = getCookieVal(j);
+        //alert("Getting Cookie "+name+": '"+value+"'");
+        return value;
+      }
+      i = document.cookie.indexOf(" ", i) + 1;
+      if (i == 0) break;
+    }
+    return null;
+  }
+
+  function SetCookie(name, value) {
+    var argv = SetCookie.arguments;
+    var argc = SetCookie.arguments.length;
+    var expires = (argc > 2) ? argv[2] : null;
+    var path = (argc > 3) ? argv[3] : null;
+    var domain = (argc > 4) ? argv[4] : null;
+    var secure = (argc > 5) ? argv[5] : false;
+    document.cookie = name + "=" + escape(value) +
+      ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+      ((path == null) ? "" : ("; path=" + path)) +
+      ((domain == null) ? "" : ("; domain=" + domain)) +
+      ((secure == true) ? "; secure" : "");
+    //alert("Setting Cookie "+name+" to '"+value+"'");
+    return true;
+  }
+
+  function DeleteCookie(name) {
+    var argv = DeleteCookie.arguments;
+    var argc = DeleteCookie.arguments.length;
+    var path = (argc > 1) ? argv[1] : null;
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1000); // This cookie is history
+    document.cookie = name + "=" + "; expires=" + exp.toGMTString() +
+      ((path == null) ? "" : ("; path=" + path));
+    return true;
+  }
+
+</script>
+
+<script language="javascript">
+  function func_focusfirst() {
+    document.CurrentForm.elements[0].focus();
+  }
+
+  function checkemail(str) {
+    with(str) {
+      apos = value.indexOf("@");
+      dotpos = value.lastIndexOf(".");
+      lastpos = value.length - 1;
+      commapos = value.indexOf(",");
+      if (apos < 1 || dotpos - apos < 2 || lastpos - dotpos < 2 || commapos != -1) {
+        alert("Please enter a valid email address.");
+        busyBox.Hide();
+        str.focus();
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+
+  function checkMultipleEmail(strEmails) {
+    var arrEmails = strEmails.split(",");
+    for (var i = 0; i < arrEmails.length; i++) {
+      apos = arrEmails[i].indexOf("@");
+      dotpos = arrEmails[i].lastIndexOf(".");
+      lastpos = arrEmails[i].length - 1;
+      commapos = arrEmails[i].indexOf(",");
+      if (apos < 1 || dotpos - apos < 2 || lastpos - dotpos > 4 || lastpos - dotpos < 2 || commapos != -1) {
+        alert("Please enter a valid email address.");
+        busyBox.Hide();
+        return false;
+      }
+    } // for
+    return true;
+  } // checkMultipleEmail
+
+  // REQ10461 On pressing the search button with the keyword saerch in the catalog page the results are displayed
+  // in the search results page TODO:SG
+  function goSubmitkeyword(f, iSkip, iCurrentPage) {
+    var f = document.CurrentForm;
+    f.skipCount.value = 0;
+    f.iCurrentPage.value = iCurrentPage;
+    // alert( iSkip);
+    // alert( iCurrentPage);
+    f.action = "catalog.aspx";
+    return f.submit();
+  }
+  // End of code REQ10461 TODO:SG
+
+  function goSkip(f, iSkip, iCurrentPage) {
+    f.skipCount.value = iSkip;
+    f.iCurrentPage.value = iCurrentPage;
+    return f.submit();
+  }
+
+  function openCustWin(which, winName, inputw, inputh, e, inputx, inputy, ctr) {
+    // Set defaults
+    var w = 550;
+    var h = 370;
+    var scroll = 'yes';
+    var xpos = 100;
+    var ypos = 10;
+
+    // Default: Position window at top left or screen
+    LeftPosition = 1 ? 1 : 0;
+    TopPosition = 1 ? 1 : 0;
+
+
+    // Set width and height of window
+    if (inputw != null)
+      w = inputw;
+    if (inputh != null)
+      h = inputh;
+
+    // Check for positioning
+    if (openCustWin.arguments.length >= 5) {
+
+      if (e != '') {
+        if (inputx != null)
+          xpos = inputx;
+        if (inputy != null)
+          ypos = inputy;
+        if (openCustWin.arguments.length == 8) {
+          // To Center Window
+          LeftPosition = (screen.width) ? (screen.width - w) / 2 : 0;
+          TopPosition = (screen.height) ? (screen.height - h) / 2 : 0;
+        } else {
+          LeftPosition = e.screenX - xpos;
+          TopPosition = e.screenY + ypos;
+        }
+      }
+    }
+
+    settings = 'height=' + h + ',width=' + w + ',top=' + TopPosition + ',left=' + LeftPosition + ',scrollbars=' +
+      scroll + ',resizable';
+    win = window.open(which, winName, settings);
+    if (typeof(busyBox) != 'undefined') {
+      busyBox.Hide();
+    }
+    return;
+  }
+
+  // addToCart() -for adding item to shopping_cart
+  function addRemoveCart(event_schedule_id, stAction, currency_code, cart_custom_code, autoSelectedSch, addbulkreg) {
+    var f = document.CurrentForm;
+    f.dbFunction.value = stAction;
+    f.cart_currency_code.value = currency_code;
+
+    if (stAction == "Add" && document.getElementsByName("rbPrice" + event_schedule_id).length > 0) {
+      if (getRadioValue(document.getElementsByName("rbPrice" + event_schedule_id)) == null) {
+        alert("Please select a price.");
+        //alert("Must select price for schedule before add to cart");
+        return void(0);
+      }
+    }
+
+    // if it's Epri, go to the Epri Info Form
+    if (stAction == "Add" && cart_custom_code == "1") {
+      window.name = "cust";
+      openCustWin("cust_dummy.aspx", "epri_info", 550, 400);
+      f.target = "epri_info";
+
+      f.action = "cust_epri_login_form.aspx";
+
+      setTimeout("document.CurrentForm.submit()", 400);
+      // BUG07117 Epri Attendees unable to register
+      // Note: For Epri, there're some values that need to be carried over to cart_action.aspx
+      // So, to apply bug 6907 for Epri, we have to make sure those values are passed into the query string
+      f.event_schedule_id.value = event_schedule_id;
+    } else {
+      if (typeof(autoSelectedSch) != "undefined" && autoSelectedSch != "")
+        f.action = "cart_action.aspx?original_event_schedule_id=" + f.event_schedule_id.value + "&schedules=" +
+        autoSelectedSch;
+      else
+        f.action = "cart_action.aspx?original_event_schedule_id=" + f.event_schedule_id.value;
+
+      //use query string instead of form post to pass event_schedule_id
+      //so the value would not stay with the page when doing back and pagination - bug 6907
+      f.action = f.action + "&event_schedule_id=" + event_schedule_id;
+    }
+    /*
+    	//f.event_schedule_id.value = event_schedule_id;
+    	//use query string instead of form post to pass event_schedule_id
+    	//so the value would not stay with the page when doing back and pagination - bug 6907
+    	f.action = f.action + "&event_schedule_id=" + event_schedule_id;
+    */
+    // Bundle only. selected schedules must = max_reg_per_bundle if "Must select bundle schedules at registration time" is checked.
+    if (f.max_reg_per_bundle != null && f.must_select_bundle_schedules_at_reg != null) {
+      if (f.must_select_bundle_schedules_at_reg.value == "1" && checkSchedulesSelected != null) {
+        var bOK = checkSchedulesSelected(f.max_reg_per_bundle.value);
+        if (!bOK) {
+          alert("Please complete schedule selection before proceeding");
+          busyBox.Hide();
+          return void(0);
+        }
+      }
+    }
+
+
+    if (addbulkreg == "1") {
+      window.name = "cust";
+      openCustWin("cust_dummy.aspx", "cart_action", 450, 300);
+      f.target = "cart_action";
+      f.action = "cart_action.aspx?cid=episerver&pid=1&lid=9&tstamp=1492498329282&Bulkreg=1&event_schedule_id=" +
+        event_schedule_id;
+      setTimeout("document.CurrentForm.submit()", 300);
+    } else {
+      if (f['__VIEWSTATE'] != null) {
+        f.__VIEWSTATE.value = null;
+        //f['__VIEWSTATE'] = null;
+      }
+      f.submit();
+    }
+  }
+
+  // addToCart() -for adding item to shopping_cart
+  function Launch(event_schedule_id, stAction, currency_code, autoSelectedSch) {
+    var f = document.CurrentForm;
+    f.dbFunction.value = stAction;
+    f.cart_currency_code.value = currency_code;
+
+    //use query string instead of form post to pass event_schedule_id
+    //so the value would not stay with the page when doing back and pagination - bug 6907
+    if (typeof(autoSelectedSch) != "undefined" && autoSelectedSch != "")
+      f.action = "cart_action.aspx?original_event_schedule_id=" + f.event_schedule_id.value + "&schedules=" +
+      autoSelectedSch;
+    else
+      f.action = "cart_action.aspx?original_event_schedule_id=" + f.event_schedule_id.value;
+
+    //use query string instead of form post to pass event_schedule_id
+    //so the value would not stay with the page when doing back and pagination - bug 6907
+    f.action = f.action + "&event_schedule_id=" + event_schedule_id + "&bLaunch=1";
+
+    f.submit();
+  }
+
+  // goToBundleChoose() -go to bundle choose page before adding item to shopping_cart
+  function goToBundleChoose(event_schedule_id, bundle_id, stAction, currency_code, cart_custom_code) {
+    var f = document.CurrentForm;
+    f.event_schedule_id.value = event_schedule_id;
+    f.bundle_id.value = bundle_id;
+    f.dbFunction.value = stAction;
+    f.cart_currency_code.value = currency_code;
+    f.action = "bundle_choose_schedules.aspx";
+    f.submit();
+  }
+
+  function trim(argstring) {
+    // 32 - Space (ascii)
+    // 9  - Tab (ascii)
+    var return_string = new String(argstring);
+    var begin = 0;
+    var end = return_string.length;
+    while (begin < end) {
+      var ich = return_string.charCodeAt(begin);
+      if (ich != 32 && ich != 160 && ich != 9)
+        break;
+      begin++;
+    }
+    while (end > begin) {
+      var ich = return_string.charCodeAt(end - 1);
+      if (ich != 32 && ich != 160 && ich != 9)
+        break;
+      end--;
+    }
+    return return_string.substring(begin, end);
+  }
+
+  function getRadioValue(radioObject) {
+    var value = null;
+    for (var i = 0; i < radioObject.length; i++) {
+      if (radioObject[i].checked) {
+        value = radioObject[i].value;
+      }
+    }
+    return value;
+  }
+
+  function launchOutlookCust(f, company_id, events_attended_id) {
+    f.action = "cust_outlook_action.aspx?company_id=" + company_id +
+      "&events_attended_id=" + events_attended_id;
+    f.target = "_blank";
+    busyBox.Hide();
+    f.submit();
+
+  }
+
+  function checkCartItems(stLink, stQstring, stMessage) {
+    var URL = stLink;
+    if (typeof(stQstring) != 'undefined') {
+      if (stQstring != "")
+        if (stQstring.indexOf("redir=") >= 0) {
+          stQstring = stQstring.substr(7, stQstring.length - 7)
+          URL += "&redir=" + escape(stQstring)
+        }
+      else
+        URL += stQstring;
+    }
+    if (window.confirm(stMessage))
+      window.open(URL, '_self');
+    busyBox.Hide();
+
+
+  }
+
+  function newRegistrant(strAction) {
+    //DeleteCookie('first_name', '/');
+    //DeleteCookie('last_name', '/');
+    //DeleteCookie('email', '/');
+    //DeleteCookie('regUserName', '/');
+    //DeleteCookie('regPassword', '/');
+    var f = document.CurrentForm;
+    f.newRegistration.value = 1;
+    if (strAction.indexOf("default.aspx") >= 0) {
+      window.open(strAction, '_self');
+    } else {
+      f.action = "" + strAction;
+      f.submit();
+    }
+    busyBox.Hide();
+  }
+
+  // Use this function to swap values between 2 multiselect boxes
+  function swapMultiSelect(mSelected, mSelection) {
+    mSelectedlen = mSelected.length;
+    for (i = 0; i < mSelectedlen; i++) {
+      if (mSelected.options[i].selected == true) {
+        mSelectionlen = mSelection.length;
+        mSelection.options[mSelectionlen] = new Option(mSelected.options[i].text, mSelected.options[i].value);
+      }
+    }
+    for (i = (mSelectedlen - 1); i >= 0; i--) {
+      if (mSelected.options[i].selected == true) {
+        mSelected.options[i] = null;
+      }
+    }
+  }
+
+  // Use this function to highlight selected listbox options
+  // update will not work if they are not selected.
+  function groupSelect(which) {
+    for (var i = 0; i < which.length; i++) {
+      which.options[i].selected = true;
+    }
+    return;
+  }
+
+  function eLearnOpenWindow(winURL, winName, winFeatures, closeWindoMsg) {
+    var winObj = window.open('', winName, winFeatures);
+    try {
+      if (winObj.location.href === 'about:blank') {
+        winObj.location.href = winURL;
+      } else {
+        alert(closeWindoMsg);
+      }
+    } catch (e) {
+      // check if window close???
+      alert(closeWindoMsg);
+    }
+  }
+
+</script>
+
+<html>
+
+<head>
+  <title>CMS and E-Commerce Training | Episerver</title>
+  <meta name="keywords" content="Training courses for Episerver CMS and Commerce" />
+  <meta name="description" content="CMS, e-commerce" />
+  <meta name="generator" content="Episerver" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <link rel="icon" type="image/png" href="/events/uploads/Episerver/favicon.ico" />
+  <link rel="apple-touch-icon" href="/events/uploads/Episerver/touch-icon-iphone.png">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/events/uploads/Episerver/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/events/uploads/Episerver/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.episerver.com/framework/styles/Images/apple-touch-icon-72x72.png"
+  />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/events/uploads/Episerver/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/events/uploads/Episerver/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/events/uploads/Episerver/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/events/uploads/Episerver/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/events/uploads/Episerver/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="/events/uploads/Episerver/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="/events/uploads/Episerver/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="/events/uploads/Episerver/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/events/uploads/Episerver/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="/events/uploads/Episerver/favicon-128.png" sizes="128x128" />
+  
+  <link href="css/episerver.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous" />
+  <style>
+    @font-face {
+      font-family: 'Simplon Norm';
+      src: url('/events/uploads/Episerver/SimplonNorm-Medium-WebS.ttf') format('truetype'), url('/events/uploads/Episerver/SimplonNorm-Medium-WebS.woff') format('woff'), url('/events/uploads/Episerver/SimplonNorm-Regular-WebS.ttf') format('truetype'), url('/events/uploads/Episerver/SimplonNorm-Regular-WebS.woff') format('woff'), ;
+    }
+  
+    @font-face {
+      font-family: "Simplon Norm";
+      src: url("/events/uploads/Episerver/SimplonNorm-Medium-WebS.eot");
+      src: url("/events/uploads/Episerver/SimplonNorm-Medium-WebS.eot#iefix") format("embedded-opentype"), url("/events/uploads/Episerver/SimplonNorm-Medium-WebS.woff") format("woff"), url("/events/uploads/Episerver/SimplonNorm-Medium-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Medium-Web/S/SimplonNorm-Medium-WebS.svg") format("svg");
+      font-weight: 600;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: "Simplon Norm";
+      src: url("/events/uploads/Episerver/SimplonNorm-Regular-WebS.eot");
+      src: url("/events/uploads/Episerver/SimplonNorm-Regular-WebS.eot#iefix") format("embedded-opentype"), url("/events/uploads/Episerver/SimplonNorm-Regular-WebS.woff") format("woff"), url("/events/uploads/Episerver/SimplonNorm-Regular-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Regular-Web/S/SimplonNorm-Regular-WebS.svg") format("svg");
+      font-weight: 300;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: "Simplon Norm";
+      src: url("/events/uploads/Episerver/SimplonNorm-Light-WebS.eot");
+      src: url("/events/uploads/Episerver/SimplonNorm-Light-WebS.eot#iefix") format("embedded-opentype"), url("/events/uploads/Episerver/SimplonNorm-Light-WebS.woff") format("woff"), url("/events/uploads/Episerver/SimplonNorm-Light-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-Light-Web/S/SimplonNorm-Light-WebS.svg") format("svg");
+      font-weight: 100;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: "Simplon Norm";
+      src: url("/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.eot");
+      src: url("/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.eot#iefix") format("embedded-opentype"), url("/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.woff") format("woff"), url("/events/uploads/Episerver/SimplonNorm-LightItalic-WebS.ttf") format("truetype"), url("http://www.episerver.com/framework/styles/fonts/SimplonNorm-LightItalic-Web/S/SimplonNorm-LightItalic-WebS.svg") format("svg");
+      font-weight: 100;
+      font-style: italic;
+    }
+  
+  </style>
+  <script>
+    dataLayer = [{
+      'PageCat': 'Cuddle',
+      'ContentCat': 'CMS'
+    }];
+  
+  </script>
+  
+  <script type="text/javascript" src="../js/jsfunctions2.js"></script>
+  <script language="javascript" type="text/javascript">
+    // Client side javascript
+
+  </script>
+
+  <style>
+
+
+  </style>
+
+</head>
+
+<body link='#000088' vlink='#000088' alink='#000088' bgcolor='#ffffff' topmargin=0 leftmargin=0 marginwidth=0 marginheight=0>
+  <div class="epiContent">
+    <div>
+      <header class="site-header">
+        <div class="site-header__inner clearfix">
+          <div class="site-header__primary">
+            <div class="site-logo">
+              <a href="http://www.episerver.com" class="site-logo__link"><span class="site-logo__text">Episerver</span></a>
+            </div>
+          </div>
+          <div class="site-header__secondary">
+            <div style="margin-top: 20px;">
+              <span><h2>Episerver Education Services</h2></span>
+              <span style="text-align: right; margin-right: 50px"><a href="http://www.episerver.com">Back to Episerver.com</a></span>
+            </div>
+  
+          </div>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="lto-page-container">
+    <div class="lto-page-container__inner clearfix">
+      <nav class="lto-primary-nav">
+        <ul>
+          <li>
+            <ul>Sign up for a course
+              <li><a href="http://inter.viewcentral.com/Events/cust/calendar.aspx?cid=Episerver&pid=1&lid=9">Calendar</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul>Find a course
+              <li><a href="http://inter.viewcentral.com/Events/cust/default.aspx?cid=Episerver&pid=1&lid=9">Search</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul>Course catalog
+              <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?cid=Episerver&pid=1&lid=9">Classroom courses</a></li>
+              <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?cid=Episerver&pid=1&lid=9">E-Learning</a></li>
+              <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?cid=Episerver&pid=1&lid=9">Editors & business users</a></li>
+              <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?cid=Episerver&pid=1&lid=9">Developers</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul>Certifications
+              <li><a href="http://inter.viewcentral.com/Events/cust/cust_certification.aspx?cid=Episerver&pid=1&lid=9">Certification testing</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul>Profile
+              <li><a href="https://inter.viewcentral.com/Events/cust/login.aspx?cid=episerver&pid=1&lid=9&newRegistration=1">Log in / Log out</a></li>
+              <li><a href="http://inter.viewcentral.com/Events/cust/current_profile2.aspx?cid=episerver&pid=1&lid=9">My profile</a></li>
+              <li><a href="https://inter.viewcentral.com/Events/cust/view_cart.aspx?cid=episerver&pid=1&lid=9">Shopping cart</a></li>
+              <li><a href="https://inter.viewcentral.com/Events/cust/change_password.aspx?cid=episerver&pid=1&lid=9">Change password</a></li>
+            </ul>
+          </li>
+        </ul>
+  
+        <!-- <ul>
+          <li>Courses
+            <ul>
+              <li><a href="catalog.html">Catalog</a></li>
+              <li><a href="search.html">Search</a></li>
+              <li><a href="#">Calendar</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </li>
+          <li>Certifications
+            <ul>
+              <li><a href="#">Catalog</a></li>
+            </ul>
+          </li>
+          <li>Profile
+            <ul>
+              <li><a href="#">Shopping Cart</a></li>
+              <li><a href="#">My profile</a></li>
+              <li><a href="#">Change Password</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="login-continue.html">Login continue</a></li>
+            </ul>
+          </li>
+        </ul> -->
+      </nav>
+  
+      <div class="lto-body-container">
+  
+        <!--Litmos Training Ops Begins-->
+  
+
+<!--Litmos Training Ops Begins-->
+<!-- Begin ViewCentral Body -->
+<center>
+  <table cellpadding="2" width="100%">
+    <tbody>
+      <tr nowrap="">
+        <td align="left" colspan="8">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table border="0" cellpadding="1" cellspacing="0" width="100%">
+    <tbody>
+      <tr bgcolor="#F5F3F1">
+        <td align="center">
+          <font face="" size="6" color="#333333"><b>Calendar
+          <script type="text/javascript">
+            window.onload = function() {
+              if (window.jQuery) {
+                $(function() {
+                  console.log($('select'));
+                  $('select').removeAttr("multiple size");
+                });
+              }
+            }
+          </script>
+          </b></font>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</center>
+<font face="" size="3" color="#333333">&nbsp;</font>
+
+
+
+<p>
+</p>
+<center>
+  <form name="CurrentForm" method="POST" action="calendar.aspx?cid=episerver&amp;pid=1&amp;lid=9&amp;tstamp=1493368178575">
+    <table>
+
+      <tbody>
+        <tr>
+          <td width="10">&nbsp;</td>
+          <td>
+            <font face="" size="3" color="#333333"><b>Months</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td width="10">&nbsp;</td>
+          <td><select name="eventMonthYear" style="overflow:auto;" size="4" multiple="">
+<option value="4~2017">April, 2017</option>
+<option value="5~2017">May, 2017</option>
+<option value="6~2017">June, 2017</option>
+<option value="9~2017">September, 2017</option>
+</select>
+          </td>
+        </tr>
+
+        <tr>
+          <td height="3"></td>
+        </tr>
+
+        <tr>
+          <td width="10">&nbsp;</td>
+          <td>
+            <font face="" size="3" color="#333333"><b>Location</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td width="10">&nbsp;</td>
+          <td><select style="overflow:auto;" name="event_address_id" size="4" multiple="">
+<option value="2">Stockholm, Sweden
+</option><option value="13">Certification
+</option><option value="4">Chicago, USA
+</option><option value="5">Copenhagen, Denmark
+</option><option value="6">Helsinki, Finland
+</option><option value="8">London, UK
+</option><option value="3">Sydney, Australia
+</option><option value="9">Utrecht, Netherlands
+</option><option value="16">Webex
+</option></select>
+          </td>
+        </tr>
+
+        <tr>
+          <td height="3"></td>
+        </tr>
+
+        <tr>
+          <td width="10">&nbsp;</td>
+          <td>
+            <font face="" size="3" color="#333333"><b>Course Name</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td width="10">&nbsp;</td>
+          <td><select style="overflow:auto;" name="event_id" size="4" multiple="">
+<option value="2">Certification
+</option><option value="3">Certification for Episerver Developers - Remote
+</option><option value="4">Developing for the DXC
+</option><option value="57">Developing for the DXC - Storyline
+</option><option value="56">Developing for the DXC :: eLearning
+</option><option value="58">Developing for the DXC SL V2
+</option><option value="55">Episerver CMS - Administrator :: eLearning
+</option><option value="5">Episerver CMS - Administrator Training
+</option><option value="6">Episerver CMS - Advanced Development
+</option><option value="7">Episerver CMS - Advanced Editing
+</option><option value="8">Episerver CMS - Basic Editing
+</option><option value="53">Episerver CMS - Basic Editing :: eLearning
+</option><option value="39">Episerver CMS - Basic Editing-eLearning
+</option><option value="9">Episerver CMS - Developer Bootcamp
+</option><option value="11">Episerver CMS - Development Fundamentals
+</option><option value="12">Episerver CMS - What's New For Editors
+</option><option value="13">Episerver CMS and Commerce - Developer Bootcamp
+</option><option value="14">Episerver CMS Developer Masterclass
+</option><option value="15">Episerver Commerce - Advanced Development
+</option><option value="17">Episerver Commerce - Development Fundamentals
+</option><option value="20">Episerver Find for Developers
+</option><option value="21">Episerver Find for Editors
+</option><option value="61">Intro to CMS
+</option><option value="59">TEST
+</option><option value="48">Test Course eLearning 1
+</option><option value="49">Test Course eLearning 2
+</option><option value="60">TEST DXC CB
+</option></select>
+          </td>
+        </tr>
+
+        <tr>
+          <td height="3"></td>
+        </tr>
+
+      </tbody>
+    </table>
+    <input type="hidden" name="month" value="4">
+    <input type="hidden" name="year" value="2017">
+    <input type="hidden" name="postingForm" value="calendar.aspx">
+
+    <input type="hidden" name="bPrintable">
+    <input type="hidden" name="bFromSearch">
+    <input type="hidden" name="bNextSearch">
+    <input type="hidden" name="bGoCalendar">
+    <!-- Define Common Hidden  fields -->
+    <input type="hidden" name="cid" value="episerver">
+    <input type="hidden" name="pid" value="1">
+    <input type="hidden" name="lid" value="9">
+    <input type="hidden" name="cart_currency_code" value="">
+    <input type="hidden" name="payment_type" value="">
+    <input type="hidden" name="orderby_location" value="">
+    <input type="hidden" name="orderby_date" value="">
+    <input type="hidden" name="newRegistration"><input type="hidden" name="bundle_location_group" value="">
+    <input type="hidden" name="errmsg" value="">
+
+    <div id="div_nav">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+            <td valign="top" nowrap="" width="104" align="center">
+              <a href="calendar.aspx?cid=Episerver&amp;pid=1">
+                <font face="Verdana" size="1">
+                  <div class="lto-button"><i class="fa fa-times" aria-hidden="true"></i> <span>Reset</span></div>
+                </font>
+              </a>
+            </td>
+            <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+            <td valign="top" nowrap="" width="104" align="center">
+              <a href="javascript:goSearch();">
+                <font face="Verdana" size="1">
+                  <div class="lto-button"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></div>
+                </font>
+              </a>
+            </td>
+            <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </form>
+</center>
+
+
+<p>
+
+
+
+</p>
+<form name="calJump" method="POST">
+  <input type="hidden" name="month">
+  <input type="hidden" name="year">
+  <input type="hidden" name="day">
+  <!-- Define Common Hidden  fields -->
+  <input type="hidden" name="cid" value="episerver">
+  <input type="hidden" name="pid" value="1">
+  <input type="hidden" name="lid" value="9">
+  <input type="hidden" name="cart_currency_code" value="">
+  <input type="hidden" name="payment_type" value="">
+  <input type="hidden" name="orderby_location" value="">
+  <input type="hidden" name="orderby_date" value="">
+  <input type="hidden" name="newRegistration"><input type="hidden" name="bundle_location_group" value="">
+  <input type="hidden" name="bNextSearch" value="1">
+  <input type="hidden" name="bFromSearch" value="">
+  <input type="hidden" name="bPrintable" value="">
+  <input type="hidden" name="bGoCalendar" value="">
+</form>
+
+
+<table border="0" cellpadding="0" width="95%" cellspacing="0">
+  <tbody>
+    <tr>
+      <td align="right">
+        <font face="" size="3"><a href="javascript:printableVersion();"><b>Printable Version</b></a></font>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table border="0" bordercolor="#ffffff" cellpadding="0" cellspacing="10" width="100%">
+  <tbody>
+    <tr>
+      <td>
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td valign="top"><img src="../images/border/tableft.gif"></td>
+              <td bgcolor="#cccccc">
+                <font class="label">&nbsp;</font>
+              </td>
+              <td bgcolor="#cccccc" nowrap="">
+                <font face="" size="3">
+                  <a href="javascript:goCalendar('week')">
+                    <font face="" size="3" color="#333333" style="text-decoration:none">Week</font>
+                  </a>
+                </font>
+              </td>
+              <td bgcolor="#cccccc">
+                <font class="label">&nbsp;</font>
+              </td>
+              <td valign="top"><img src="../images/border/tabright.gif"></td>
+              <td valign="top"><img src="../images/border/tableft.gif"></td>
+              <td bgcolor="#ffffff">
+                <font class="label">&nbsp;</font>
+              </td>
+              <td bgcolor="#ffffff" nowrap="">
+                <font face="" size="3">
+                  <a href="javascript:goCalendar('month')">
+                    <font face="" size="3" color="#333333" style="text-decoration:none"><b>Month</b></font>
+                  </a>
+                </font>
+              </td>
+              <td bgcolor="#ffffff">
+                <font class="label">&nbsp;</font>
+              </td>
+              <td valign="top"><img src="../images/border/tabright.gif"></td>
+            </tr>
+          </tbody>
+        </table>
+        <table border="0" bordercolor="#ffffff" cellpadding="0" cellspacing="0" bgcolor="#ffffff" width="100%">
+          <tbody>
+            <tr bgcolor="#ffffff">
+              <td align="center">
+                <font color="#333333" face="size=4"><b><a href="javascript:calJump('backward')"><font face="" size="4" color="#333333">&lt;&lt;</font></a>&nbsp;&nbsp;&nbsp;&nbsp;April&nbsp;2017&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:calJump('forward')"><font face="" size="4" color="#333333">&gt;&gt;</font></a></b></font>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="1" width="100%">
+                  <tbody>
+                    <tr bgcolor="#888888">
+                      <td align="center">
+                        <font face="" size="3" color="#333333">
+                          <font color="#ffffff"><b>Monday</b></font>
+                        </font>
+                      </td>
+                      <td align="center">
+                        <font face="" size="3" color="#333333">
+                          <font color="#ffffff"><b>Tuesday</b></font>
+                        </font>
+                      </td>
+                      <td align="center">
+                        <font face="" size="3" color="#333333">
+                          <font color="#ffffff"><b>Wednesday</b></font>
+                        </font>
+                      </td>
+                      <td align="center">
+                        <font face="" size="3" color="#333333">
+                          <font color="#ffffff"><b>Thursday</b></font>
+                        </font>
+                      </td>
+                      <td align="center">
+                        <font face="" size="3" color="#333333">
+                          <font color="#ffffff"><b>Friday</b></font>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        &nbsp;</td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        &nbsp;</td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        &nbsp;</td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        &nbsp;</td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        &nbsp;</td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">3</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">4</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">5</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">6</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">7</font></b><br></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">10</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">11</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">12</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">13</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">14</font></b><br></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">17</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">18</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">19</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">20</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">21</font></b><br></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">24</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">25</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">26</font></b><br></td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        <b><font face="" size="3" color="#333333">27</font></b><br></td>
+                      <td bgcolor="eeeeee" height="75" width="14%" align="left" valign="top">
+                        &nbsp;<b><font face="" size="3" color="#333333">28</font></b><br></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        &nbsp;</td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        &nbsp;</td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        &nbsp;</td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        &nbsp;</td>
+                      <td bgcolor="#ffffff" height="75" width="14%" align="left" valign="top">
+                        &nbsp;</td>
+                    </tr>
+
+                    <tr>
+                      <td colspan="7" align="center" bgcolor="#888888">
+                        <font face="size=1" color="#ffffff"><b>04/28/17 01:29 AM</b></font>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr bgcolor="#ffffff">
+              <td align="center">
+                <font color="#333333" face="size=4"><b><a href="javascript:calJump('backward')"><font face="" size="4" color="#333333">&lt;&lt;</font></a>&nbsp;&nbsp;&nbsp;&nbsp;April&nbsp;2017&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:calJump('forward')"><font face="" size="4" color="#333333">&gt;&gt;</font></a></b></font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td valign="top"><img src="../images/border/bottomtableft.gif"></td>
+              <td bgcolor="#cccccc">
+                <font class="label">&nbsp;</font>
+              </td>
+              <td bgcolor="#cccccc" nowrap="">
+                <font face="" size="3">
+                  <a href="javascript:goCalendar('week')">
+                    <font face="" size="3" color="#333333" style="text-decoration:none">Week</font>
+                  </a>
+                </font>
+              </td>
+              <td bgcolor="#cccccc">
+                <font class="label">&nbsp;</font>
+              </td>
+              <td valign="top"><img src="../images/border/bottomtabright.gif"></td>
+              <td valign="top"><img src="../images/border/bottomtableft.gif"></td>
+              <td bgcolor="#ffffff">
+                <font class="label">&nbsp;</font>
+              </td>
+              <td bgcolor="#ffffff" nowrap="">
+                <font face="" size="3">
+                  <a href="javascript:goCalendar('month')">
+                    <font face="" size="3" color="#333333" style="text-decoration:none"><b>Month</b></font>
+                  </a>
+                </font>
+              </td>
+              <td bgcolor="#ffffff">
+                <font class="label">&nbsp;</font>
+              </td>
+              <td valign="top"><img src="../images/border/bottomtabright.gif"></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<center>
+  <div id="div_nav">
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td valign="top" nowrap="" width="104" align="center">
+            <a href="javascript:history.go(-1)">
+              <font face="Verdana" size="1">
+                <div class="lto-button"><i class="fa fa-chevron-left" aria-hidden="true"></i> <span>Back</span></div>
+              </font>
+            </a>
+          </td>
+          <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+          <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+          <td><img src="/Events/images/border/trans_spacer.gif" height="15" width="3"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <table cellpadding="2" width="100%">
+  </table>
+
+  <br>
+</center>
+
+<!-- End ViewCentral Body -->
+<script language="javascript" src="/Events/incl/BusyBox.js" type="text/javascript"></script>
+</div>
+</div>
+<!--Litmos Training Ops End-->
+</div>
+<footer class="site-footer">
+  <div class="site-footer__primary-block">
+    <div class="site-footer__primary-block-content">
+
+      <div class="site-footer__primary-block-column">
+        <div class="contact">
+          <h2 class="site-footer__primary-block-heading">
+                  Contact
+               </h2>
+          <ul class="site-footer__primary-block-contactList">
+            <li>
+              <h3><span>North American Headquarters</span></h3>
+              <p><span>Episerver Inc.<br />542 Amherst Street (Route 101A)<br /></span><span>Nashua, NH 03063<br />USA</span></p>
+              <p><a href="mailto:salesus@episerver.com">salesus@episerver.com</a></p>
+              <p>
+                Phone:
+                <a onclick="ga('send', 'event', 'Mobile', 'Click to Call', '+16035940249');" href="tel:+16035940249">
+                        +1 603 594 0249
+                        </a>
+              </p>
+            </li>
+            <li>
+              <h3>European Headquarters</h3>
+              <p>Episerver AB<br />Regeringsgatan 67<br />Box 7007, 103 86 Stockholm<br />Sweden</p>
+              <p>Email: <a href="mailto:info@episerver.com">info@episerver.com</a></p>
+              <p>
+                Phone: <a onclick="ga('send', 'event', 'Mobile', 'Click to Call', '+46855582700');" href="tel:+46855582700">
+                        +46 8 55 58 27 00
+                        </a>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <ul class="site-footer__primary-block-socialMedialList">
+          <li>
+            <a class="icon-social_facebook" href="https://www.facebook.com/Episerver" target="_blank"></a>
+          </li>
+          <li>
+            <a class="icon-social_youtube" href="http://www.youtube.com/EpiserverAB" target="_blank"></a>
+          </li>
+          <li>
+            <a class="icon-social_tvitter" href="https://twitter.com/episerver" target="_blank"></a>
+          </li>
+          <li>
+            <a class="icon-social_linkedin" href="http://www.linkedin.com/company/episerver-ab" target="_blank"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="site-footer__colophon">
+    <span class="site-footer__colophonText">© Episerver 2017</span>
+    <a class="site-footer__colophonLink" href="http://www.episerver.com/legal/privacy-statement/">Privacy Statement</a>
+  </div>
+</footer>
+</div>
+</div>
+<!--end dlass epiContent-->
+
+<table width='100%'>
+  <tr>
+    <td>
+      <table width='100%'>
+        <tr>
+          <td colspan='4' align='center'></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>
+
