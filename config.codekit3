@@ -479,6 +479,12 @@
 		"oAP": "\/catalog.html",
 		"oF": 3
 		},
+	"\/pages\/contact-information.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/contact-information.html",
+		"oF": 2
+		},
 	"\/pages\/index.kit": {
 		"ft": 2048,
 		"oA": 0,
