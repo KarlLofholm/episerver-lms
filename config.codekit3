@@ -57,6 +57,12 @@
 		"oAP": "\/_shared\/top-scripts.html",
 		"oF": 1
 		},
+	"\/calandar.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/calandar.html",
+		"oF": 0
+		},
 	"\/catalog.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -491,6 +497,12 @@
 		"oAP": "\/login.html",
 		"oF": 2
 		},
+	"\/pages\/register.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/register.html",
+		"oF": 2
+		},
 	"\/pages\/search.kit": {
 		"ft": 2048,
 		"oA": 0,
@@ -520,6 +532,12 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/register.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/register.html",
+		"oF": 0
 		},
 	"\/scss\/_buttons.scss": {
 		"aP": 0,
@@ -647,6 +665,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/scss\/_main.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_search.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_search.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

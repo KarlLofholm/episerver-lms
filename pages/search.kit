@@ -8,7 +8,20 @@
     <tbody>
       <tr bgcolor="#f5f3f1">
         <td align="center">
-          <font face="&quot;Simplon Norm&quot;, &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" size="5" color="#333"><b>Search Page</b></font>
+          <font face="&quot;Simplon Norm&quot;, &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" size="5" color="#333">
+            <b>Search Page</b>
+            <script type="text/javascript">
+              window.onload = function() {
+                if (window.jQuery) {
+                  $(function() {
+                    $('form[name="CurrentForm"]').addClass('search-page-form');
+                    $('select').removeAttr("multiple size").addClass('search-page-select');
+                  });
+                }
+              }
+
+            </script>
+          </font>
         </td>
       </tr>
     </tbody>

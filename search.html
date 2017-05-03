@@ -390,7 +390,7 @@
   <meta name="generator" content="Episerver" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <meta name="viewport" content="width=1280" />
   <link rel="icon" type="image/png" href="/events/uploads/Episerver/favicon.ico" />
   <link rel="apple-touch-icon" href="/events/uploads/Episerver/touch-icon-iphone.png">
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/events/uploads/Episerver/apple-touch-icon-57x57.png" />
@@ -497,26 +497,17 @@
       <nav class="lto-primary-nav">
         <ul>
           <li>
-            <ul>Sign up for a course
-              <li><a href="http://inter.viewcentral.com/Events/cust/calendar.aspx?cid=Episerver&pid=1&lid=9">Calendar</a></li>
-            </ul>
-          </li>
-          <li>
             <ul>Find a course
               <li><a href="http://inter.viewcentral.com/Events/cust/default.aspx?cid=Episerver&pid=1&lid=9">Search</a></li>
             </ul>
           </li>
           <li>
             <ul>Course catalog
-              <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?cid=Episerver&pid=1&lid=9">Classroom courses</a></li>
-              <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?cid=Episerver&pid=1&lid=9">E-Learning</a></li>
+              <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?app_id=1&postingForm=default.aspx&cid=episerver&pid=1&lid=9">Classroom courses</a></li>
+              <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?app_id=2&postingForm=default.aspx&cid=episerver&pid=1&lid=9">E-Learning</a></li>
               <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?cid=Episerver&pid=1&lid=9">Editors & business users</a></li>
               <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?cid=Episerver&pid=1&lid=9">Developers</a></li>
-            </ul>
-          </li>
-          <li>
-            <ul>Certifications
-              <li><a href="http://inter.viewcentral.com/Events/cust/cust_certification.aspx?cid=Episerver&pid=1&lid=9">Certification testing</a></li>
+              <li><a href="http://inter.viewcentral.com/Events/cust/catalog2.aspx?event_id=2&postingForm=default.aspx&cid=episerver&pid=1&lid=9">Certification</a></li>
             </ul>
           </li>
           <li>
@@ -569,7 +560,20 @@
     <tbody>
       <tr bgcolor="#f5f3f1">
         <td align="center">
-          <font face="&quot;Simplon Norm&quot;, &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" size="5" color="#333"><b>Search Page</b></font>
+          <font face="&quot;Simplon Norm&quot;, &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" size="5" color="#333">
+            <b>Search Page</b>
+            <script type="text/javascript">
+              window.onload = function() {
+                if (window.jQuery) {
+                  $(function() {
+                    $('form[name="CurrentForm"]').addClass('search-page-form');
+                    $('select').removeAttr("multiple size").addClass('search-page-select');
+                  });
+                }
+              }
+
+            </script>
+          </font>
         </td>
       </tr>
     </tbody>
