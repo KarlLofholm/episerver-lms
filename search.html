@@ -567,7 +567,13 @@
                 if (window.jQuery) {
                   $(function() {
                     $('form[name="CurrentForm"]').addClass('search-page-form');
-                    $('select').removeAttr("multiple size").addClass('search-page-select');
+                    $('select')
+                      .removeAttr("multiple size")
+                      .addClass('search-page-select')
+                      .prepend($('<option>', {
+                        value: '',
+                        text: ''
+                      }).attr('selected','selected'))
                   });
                 }
               }
