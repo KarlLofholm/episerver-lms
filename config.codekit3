@@ -69,6 +69,12 @@
 		"oAP": "\/catalog.html",
 		"oF": 0
 		},
+	"\/contact-information.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/contact-information.html",
+		"oF": 0
+		},
 	"\/css\/cust\/stylesdesign2.css": {
 		"aP": 1,
 		"bl": 0,
