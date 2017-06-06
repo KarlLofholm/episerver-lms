@@ -79,16 +79,6 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/css\/episerver.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/episerver-min.css",
-		"oF": 0,
-		"oS": 0
-		},
 	"\/Events\/images\/border\/trans_spacer.gif": {
 		"ft": 4194304,
 		"iS": 855,
@@ -701,7 +691,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/scss\/episerver.scss": {
+	"\/scss\/episerver-lms.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -709,7 +699,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/episerver.css",
+		"oAP": "\/css\/episerver-lms.css",
 		"oF": 3,
 		"oS": 0,
 		"uL": 1
